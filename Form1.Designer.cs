@@ -32,18 +32,18 @@
             tabControl1 = new TabControl();
             loginTab = new TabPage();
             loginLogo = new PictureBox();
-            button7 = new Button();
+            loginBtn = new Button();
             loginHelpBtn = new Button();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            ksuIdTextBox = new TextBox();
+            ksuIdLabel = new Label();
+            ksuPassLabel = new Label();
+            ksuEmailLabel = new Label();
+            ksuPassTextBox = new TextBox();
+            ksuEmailTextBox = new TextBox();
             myHomeTab = new TabPage();
             ksuLink = new Label();
             uitsLink = new Label();
-            myHomeLogoutBtn = new Button();
+            myHomeExitBtn = new Button();
             myHomeHelpBtn = new Button();
             myProfileBtn = new Button();
             myPaymentsBtn = new Button();
@@ -97,14 +97,14 @@
             // 
             loginTab.BackColor = Color.White;
             loginTab.Controls.Add(loginLogo);
-            loginTab.Controls.Add(button7);
+            loginTab.Controls.Add(loginBtn);
             loginTab.Controls.Add(loginHelpBtn);
-            loginTab.Controls.Add(textBox3);
-            loginTab.Controls.Add(label3);
-            loginTab.Controls.Add(label2);
-            loginTab.Controls.Add(label1);
-            loginTab.Controls.Add(textBox2);
-            loginTab.Controls.Add(textBox1);
+            loginTab.Controls.Add(ksuIdTextBox);
+            loginTab.Controls.Add(ksuIdLabel);
+            loginTab.Controls.Add(ksuPassLabel);
+            loginTab.Controls.Add(ksuEmailLabel);
+            loginTab.Controls.Add(ksuPassTextBox);
+            loginTab.Controls.Add(ksuEmailTextBox);
             loginTab.Location = new Point(4, 29);
             loginTab.Name = "loginTab";
             loginTab.Padding = new Padding(3);
@@ -122,88 +122,89 @@
             loginLogo.TabIndex = 8;
             loginLogo.TabStop = false;
             // 
-            // button7
+            // loginBtn
             // 
-            button7.BackColor = Color.FromArgb(255, 255, 128);
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.Location = new Point(255, 550);
-            button7.Name = "button7";
-            button7.Size = new Size(144, 48);
-            button7.TabIndex = 7;
-            button7.Text = "Authenticate";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
+            loginBtn.BackColor = Color.FromArgb(255, 255, 128);
+            loginBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginBtn.Location = new Point(255, 550);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(144, 48);
+            loginBtn.TabIndex = 7;
+            loginBtn.Text = "Authenticate";
+            loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += button7_Click;
             // 
             // loginHelpBtn
             // 
             loginHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            loginHelpBtn.Location = new Point(570, 6);
+            loginHelpBtn.Location = new Point(6, 6);
             loginHelpBtn.Name = "loginHelpBtn";
             loginHelpBtn.Size = new Size(44, 37);
             loginHelpBtn.TabIndex = 6;
             loginHelpBtn.Text = "?";
             loginHelpBtn.UseVisualStyleBackColor = true;
+            loginHelpBtn.Click += loginHelpBtn_Click;
             // 
-            // textBox3
+            // ksuIdTextBox
             // 
-            textBox3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(255, 490);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(233, 38);
-            textBox3.TabIndex = 5;
+            ksuIdTextBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuIdTextBox.Location = new Point(255, 490);
+            ksuIdTextBox.Name = "ksuIdTextBox";
+            ksuIdTextBox.Size = new Size(233, 38);
+            ksuIdTextBox.TabIndex = 5;
             // 
-            // label3
+            // ksuIdLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(146, 500);
-            label3.Name = "label3";
-            label3.Size = new Size(77, 28);
-            label3.TabIndex = 4;
-            label3.Text = "KSU ID:";
+            ksuIdLabel.AutoSize = true;
+            ksuIdLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuIdLabel.Location = new Point(146, 500);
+            ksuIdLabel.Name = "ksuIdLabel";
+            ksuIdLabel.Size = new Size(77, 28);
+            ksuIdLabel.TabIndex = 4;
+            ksuIdLabel.Text = "KSU ID:";
             // 
-            // label2
+            // ksuPassLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(84, 440);
-            label2.Name = "label2";
-            label2.Size = new Size(139, 28);
-            label2.TabIndex = 3;
-            label2.Text = "KSU Password:";
+            ksuPassLabel.AutoSize = true;
+            ksuPassLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuPassLabel.Location = new Point(84, 440);
+            ksuPassLabel.Name = "ksuPassLabel";
+            ksuPassLabel.Size = new Size(139, 28);
+            ksuPassLabel.TabIndex = 3;
+            ksuPassLabel.Text = "KSU Password:";
             // 
-            // label1
+            // ksuEmailLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(78, 380);
-            label1.Name = "label1";
-            label1.Size = new Size(145, 28);
-            label1.TabIndex = 2;
-            label1.Text = "KSU Username:";
+            ksuEmailLabel.AutoSize = true;
+            ksuEmailLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuEmailLabel.Location = new Point(118, 380);
+            ksuEmailLabel.Name = "ksuEmailLabel";
+            ksuEmailLabel.Size = new Size(105, 28);
+            ksuEmailLabel.TabIndex = 2;
+            ksuEmailLabel.Text = "KSU Email:";
             // 
-            // textBox2
+            // ksuPassTextBox
             // 
-            textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(255, 430);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(233, 38);
-            textBox2.TabIndex = 1;
+            ksuPassTextBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuPassTextBox.Location = new Point(255, 430);
+            ksuPassTextBox.Name = "ksuPassTextBox";
+            ksuPassTextBox.Size = new Size(233, 38);
+            ksuPassTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // ksuEmailTextBox
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(255, 370);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(233, 38);
-            textBox1.TabIndex = 0;
+            ksuEmailTextBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ksuEmailTextBox.Location = new Point(255, 370);
+            ksuEmailTextBox.Name = "ksuEmailTextBox";
+            ksuEmailTextBox.Size = new Size(233, 38);
+            ksuEmailTextBox.TabIndex = 0;
             // 
             // myHomeTab
             // 
             myHomeTab.BackColor = Color.White;
             myHomeTab.Controls.Add(ksuLink);
             myHomeTab.Controls.Add(uitsLink);
-            myHomeTab.Controls.Add(myHomeLogoutBtn);
+            myHomeTab.Controls.Add(myHomeExitBtn);
             myHomeTab.Controls.Add(myHomeHelpBtn);
             myHomeTab.Controls.Add(myProfileBtn);
             myHomeTab.Controls.Add(myPaymentsBtn);
@@ -226,7 +227,7 @@
             ksuLink.Location = new Point(192, 728);
             ksuLink.Name = "ksuLink";
             ksuLink.Size = new Size(239, 28);
-            ksuLink.TabIndex = 10;
+            ksuLink.TabIndex = 7;
             ksuLink.Text = "Kennesaw State University";
             // 
             // uitsLink
@@ -236,28 +237,30 @@
             uitsLink.Location = new Point(204, 756);
             uitsLink.Name = "uitsLink";
             uitsLink.Size = new Size(212, 28);
-            uitsLink.TabIndex = 9;
+            uitsLink.TabIndex = 8;
             uitsLink.Text = "UITS Technical Support";
             // 
-            // myHomeLogoutBtn
+            // myHomeExitBtn
             // 
-            myHomeLogoutBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myHomeLogoutBtn.Location = new Point(6, 6);
-            myHomeLogoutBtn.Name = "myHomeLogoutBtn";
-            myHomeLogoutBtn.Size = new Size(44, 37);
-            myHomeLogoutBtn.TabIndex = 8;
-            myHomeLogoutBtn.Text = "X";
-            myHomeLogoutBtn.UseVisualStyleBackColor = true;
+            myHomeExitBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            myHomeExitBtn.Location = new Point(570, 6);
+            myHomeExitBtn.Name = "myHomeExitBtn";
+            myHomeExitBtn.Size = new Size(44, 37);
+            myHomeExitBtn.TabIndex = 10;
+            myHomeExitBtn.Text = "X";
+            myHomeExitBtn.UseVisualStyleBackColor = true;
+            myHomeExitBtn.Click += myHomeExitBtn_Click;
             // 
             // myHomeHelpBtn
             // 
             myHomeHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myHomeHelpBtn.Location = new Point(570, 6);
+            myHomeHelpBtn.Location = new Point(6, 6);
             myHomeHelpBtn.Name = "myHomeHelpBtn";
             myHomeHelpBtn.Size = new Size(44, 37);
-            myHomeHelpBtn.TabIndex = 7;
+            myHomeHelpBtn.TabIndex = 9;
             myHomeHelpBtn.Text = "?";
             myHomeHelpBtn.UseVisualStyleBackColor = true;
+            myHomeHelpBtn.Click += myHomeHelpBtn_Click;
             // 
             // myProfileBtn
             // 
@@ -349,12 +352,13 @@
             // myCoursesHelpBtn
             // 
             myCoursesHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myCoursesHelpBtn.Location = new Point(570, 6);
+            myCoursesHelpBtn.Location = new Point(6, 6);
             myCoursesHelpBtn.Name = "myCoursesHelpBtn";
             myCoursesHelpBtn.Size = new Size(44, 37);
             myCoursesHelpBtn.TabIndex = 8;
             myCoursesHelpBtn.Text = "?";
             myCoursesHelpBtn.UseVisualStyleBackColor = true;
+            myCoursesHelpBtn.Click += myCoursesHelpBtn_Click;
             // 
             // myRegistrationTab
             // 
@@ -370,12 +374,13 @@
             // myRegisHelpBtn
             // 
             myRegisHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myRegisHelpBtn.Location = new Point(570, 6);
+            myRegisHelpBtn.Location = new Point(6, 6);
             myRegisHelpBtn.Name = "myRegisHelpBtn";
             myRegisHelpBtn.Size = new Size(44, 37);
             myRegisHelpBtn.TabIndex = 8;
             myRegisHelpBtn.Text = "?";
             myRegisHelpBtn.UseVisualStyleBackColor = true;
+            myRegisHelpBtn.Click += myRegisHelpBtn_Click;
             // 
             // myScheduleTab
             // 
@@ -391,12 +396,13 @@
             // myScheduleHelpBtn
             // 
             myScheduleHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myScheduleHelpBtn.Location = new Point(570, 6);
+            myScheduleHelpBtn.Location = new Point(6, 6);
             myScheduleHelpBtn.Name = "myScheduleHelpBtn";
             myScheduleHelpBtn.Size = new Size(44, 37);
             myScheduleHelpBtn.TabIndex = 8;
             myScheduleHelpBtn.Text = "?";
             myScheduleHelpBtn.UseVisualStyleBackColor = true;
+            myScheduleHelpBtn.Click += myScheduleHelpBtn_Click;
             // 
             // myAdvisorTab
             // 
@@ -412,12 +418,13 @@
             // myAdvisorHelpBtn
             // 
             myAdvisorHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myAdvisorHelpBtn.Location = new Point(570, 6);
+            myAdvisorHelpBtn.Location = new Point(6, 6);
             myAdvisorHelpBtn.Name = "myAdvisorHelpBtn";
             myAdvisorHelpBtn.Size = new Size(44, 37);
             myAdvisorHelpBtn.TabIndex = 8;
             myAdvisorHelpBtn.Text = "?";
             myAdvisorHelpBtn.UseVisualStyleBackColor = true;
+            myAdvisorHelpBtn.Click += myAdvisorHelpBtn_Click;
             // 
             // myPaymentsTab
             // 
@@ -433,12 +440,13 @@
             // myPaymentsHelpBtn
             // 
             myPaymentsHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myPaymentsHelpBtn.Location = new Point(570, 6);
+            myPaymentsHelpBtn.Location = new Point(6, 6);
             myPaymentsHelpBtn.Name = "myPaymentsHelpBtn";
             myPaymentsHelpBtn.Size = new Size(44, 37);
             myPaymentsHelpBtn.TabIndex = 8;
             myPaymentsHelpBtn.Text = "?";
             myPaymentsHelpBtn.UseVisualStyleBackColor = true;
+            myPaymentsHelpBtn.Click += myPaymentsHelpBtn_Click;
             // 
             // myProfileTab
             // 
@@ -454,12 +462,13 @@
             // myProfileHelpBtn
             // 
             myProfileHelpBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            myProfileHelpBtn.Location = new Point(570, 6);
+            myProfileHelpBtn.Location = new Point(6, 6);
             myProfileHelpBtn.Name = "myProfileHelpBtn";
             myProfileHelpBtn.Size = new Size(44, 37);
             myProfileHelpBtn.TabIndex = 8;
             myProfileHelpBtn.Text = "?";
             myProfileHelpBtn.UseVisualStyleBackColor = true;
+            myProfileHelpBtn.Click += myProfileHelpBtn_Click;
             // 
             // Form1
             // 
@@ -503,19 +512,19 @@
         private Button myAdvisorBtn;
         private Button myScheduleBtn;
         private Button myRegistrationBtn;
-        private TextBox textBox1;
-        private Button button7;
+        private TextBox ksuEmailTextBox;
+        private Button loginBtn;
         private Button loginHelpBtn;
-        private TextBox textBox3;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private TextBox textBox2;
+        private TextBox ksuIdTextBox;
+        private Label ksuIdLabel;
+        private Label ksuPassLabel;
+        private Label ksuEmailLabel;
+        private TextBox ksuPassTextBox;
         private PictureBox loginLogo;
         private Button myHomeHelpBtn;
         private Button myCoursesHelpBtn;
         private Button myRegisHelpBtn;
-        private Button myHomeLogoutBtn;
+        private Button myHomeExitBtn;
         private Label ksuLink;
         private Label uitsLink;
         private Button myScheduleHelpBtn;

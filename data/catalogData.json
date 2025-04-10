@@ -1,0 +1,133 @@
+{
+    "semester": "Fall 2026",
+    "departments": {
+        "mathematics": [
+            {
+                "courseId": "MATH1001",
+                "courseName": "College Algebra",
+                "courseDescription": "Fundamental algebra concepts for higher mathematics.",
+                "courseType": "inPerson",
+                "meetingTimes": "Monday, Wednesday, Friday - 10:00 AM to 11:00 AM",
+                "credits": 3,
+                "instructor": "Dr. L. Brown",
+                "prerequisites": ["None"]
+            },
+            {
+                "courseId": "MATH2010",
+                "courseName": "Calculus II",
+                "courseDescription": "Techniques of integration and their applications.",
+                "courseType": "inPerson",
+                "meetingTimes": "Tuesday, Thursday - 1:30 PM to 2:45 PM",
+                "credits": 3,
+                "instructor": "Dr. E. Johnson",
+                "prerequisites": ["MATH1001"]
+            },
+            {
+                "courseId": "MATH3130",
+                "courseName": "Linear Algebra",
+                "courseDescription": "Advanced linear systems, vector spaces, and matrix theory.",
+                "courseType": "online",
+                "meetingTimes": "asynchronous",
+                "credits": 3,
+                "instructor": "Dr. K. Lee",
+                "prerequisites": ["MATH2010"]
+            }
+        ],
+        "computerScience": [
+            {
+                "courseId": "CS1001",
+                "courseName": "Introduction to Computer Science",
+                "courseDescription": "Overview of computer science principles and programming basics.",
+                "courseType": "online",
+                "meetingTimes": "asynchronous",
+                "credits": 3,
+                "instructor": "Dr. K. Wilson",
+                "prerequisites": ["None"]
+            },
+            {
+                "courseId": "CS2010",
+                "courseName": "Data Structures",
+                "courseDescription": "Fundamental data structures and algorithm analysis.",
+                "courseType": "inPerson",
+                "meetingTimes": "Thursday - 4:00 PM to 5:30 PM",
+                "credits": 3,
+                "instructor": "Dr. J. Lee",
+                "prerequisites": ["CS1001"]
+            },
+            {
+                "courseId": "CS3130",
+                "courseName": "Operating Systems",
+                "courseDescription": "Design and implementation of modern operating systems.",
+                "courseType": "inPerson",
+                "meetingTimes": "Monday, Wednesday - 2:00 PM to 3:30 PM",
+                "credits": 3,
+                "instructor": "Dr. M. Taylor",
+                "prerequisites": ["CS2010"]
+            }
+        ],
+        "english": [
+            {
+                "courseId": "ENG1001",
+                "courseName": "Introduction to English",
+                "courseDescription": "Focus on rhetorical analysis and evaluating sources.",
+                "courseType": "online",
+                "meetingTimes": "asynchronous",
+                "credits": 3,
+                "instructor": "Dr. J. Doe",
+                "prerequisites": ["None"]
+            },
+            {
+                "courseId": "ENG2010",
+                "courseName": "Intermediate Writing",
+                "courseDescription": "Essay writing with an emphasis on argumentative techniques.",
+                "courseType": "inPerson",
+                "meetingTimes": "Tuesday, Thursday - 11:00 AM to 12:15 PM",
+                "credits": 3,
+                "instructor": "Dr. A. Green",
+                "prerequisites": ["ENG1001"]
+            },
+            {
+                "courseId": "ENG3130",
+                "courseName": "Creative Writing Workshop",
+                "courseDescription": "Advanced techniques in poetry and fiction writing.",
+                "courseType": "inPerson",
+                "meetingTimes": "Monday, Wednesday - 3:00 PM to 4:30 PM",
+                "credits": 3,
+                "instructor": "Dr. C. Harris",
+                "prerequisites": ["ENG2010"]
+            }
+        ],
+        "history": [
+            {
+                "courseId": "HIST1001",
+                "courseName": "World History I",
+                "courseDescription": "Survey of major civilizations from antiquity to the Renaissance.",
+                "courseType": "inPerson",
+                "meetingTimes": "Monday, Wednesday, Friday - 9:00 AM to 10:00 AM",
+                "credits": 3,
+                "instructor": "Dr. M. Harris",
+                "prerequisites": ["None"]
+            },
+            {
+                "courseId": "HIST2010",
+                "courseName": "American History II",
+                "courseDescription": "The Civil War to present-day America.",
+                "courseType": "online",
+                "meetingTimes": "asynchronous",
+                "credits": 3,
+                "instructor": "Dr. S. Brown",
+                "prerequisites": ["None"]
+            },
+            {
+                "courseId": "HIST3130",
+                "courseName": "Modern European History",
+                "courseDescription": "Exploration of major events in modern European history.",
+                "courseType": "inPerson",
+                "meetingTimes": "Tuesday, Thursday - 2:00 PM to 3:30 PM",
+                "credits": 3,
+                "instructor": "Dr. T. Johnson",
+                "prerequisites": ["HIST2010"]
+            }
+        ]
+    }
+}
