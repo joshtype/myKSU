@@ -1,0 +1,13 @@
+{
+    "KSUID": 123456789,
+    "NAME": "Tues Estudio",
+    "DOB": "01/01/2000",
+    "MAJOR": "Computer Science",
+    "STANDING": "Sophomore",
+    "GPA": 3.6,
+    "PREVIOUS COURSES": [
+        "MATH1001: B",
+        "CS1001: A",
+        "ENG1001: A"
+     ]
+}

@@ -1,0 +1,17 @@
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\bin\Debug\net8.0-windows\myKSU.exe
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\bin\Debug\net8.0-windows\myKSU.deps.json
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\bin\Debug\net8.0-windows\myKSU.runtimeconfig.json
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\bin\Debug\net8.0-windows\myKSU.dll
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\bin\Debug\net8.0-windows\myKSU.pdb
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.Form1.resources
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.Properties.Resources.resources
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.csproj.GenerateResource.cache
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.AssemblyInfoInputs.cache
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.AssemblyInfo.cs
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.csproj.CoreCompileInputs.cache
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.dll
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\refint\myKSU.dll
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.pdb
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\myKSU.genruntimeconfig.cache
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU\myKSU\obj\Debug\net8.0-windows\ref\myKSU.dll
