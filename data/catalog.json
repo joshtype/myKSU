@@ -1,0 +1,294 @@
+[
+    {
+        "code": "BIO1010",
+        "name": "Introduction to Biology",
+        "department": "Science",
+        "description": "Introductory biologic concepts focusing on cellular biology. Includes lab component.",
+        "credits": 4,
+        "seatCap": 30,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "10:00 AM - 11:30 AM",
+            "Wednesday": "10:30 AM - 12:00 PM",
+            "Friday": "9:15 AM - 10:15 AM"
+        }  
+    },
+    {
+        "code": "PHYS1100",
+        "name": "Fundamentals of Physics",
+        "department": "Science",
+        "description": "Basic principles of physics with real-world applications.",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "10:00 AM - 11:30 AM",  
+            "Wednesday": "10:30 AM - 12:00 PM"
+        }
+    },
+    {
+        "code": "BIO2005",
+        "name": "Anatomy and Physiology",
+        "department": "Science",
+        "description": "Lectures on anatomical and physiological structures and processes. Lab component with dissection.",
+        "credits": 4,
+        "seatCap": 30,
+        "prerequisites": ["BIO1010"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "2:00 PM - 3:30 PM",
+            "Thursday": "2:00 PM - 3:30 PM"
+        }  
+    },
+    {
+        "code": "CHEM2100",
+        "name": "Organic Chemistry",
+        "department": "Science",
+        "description": "Exploration of organic molecules, reactions, and mechanisms. Includes lab component.",
+        "credits": 3,
+        "seatCap": 25,
+        "prerequisites": ["BIO1010"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "2:00 PM - 3:30 PM",
+            "Thursday": "2:00 PM - 3:30 PM" 
+        }
+    },
+    {
+        "code": "PHYS1300",
+        "name": "Introduction to Physics",
+        "department": "Science",
+        "description": "Introduction to calculus-based physics with lab work.",
+        "credits": 4,
+        "instructor": "Dr. A. Einstein",
+        "prerequisites": ["MATH2022"],
+        "courseType": "online",
+        "type": "online",
+        "meetingTimes": null
+    },
+    {
+        "code": "GEO3145",
+        "name": "Sedimentary Petrology",
+        "department": "Science",
+        "description": "Detailed study of mineralogic composition and processes involved in petrification of sediments.",
+        "credits": 3,
+        "seatCap": 20,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "2:00 PM - 3:30 PM",
+            "Wednesday": "10:15 AM - 11:30 AM"
+        }
+    },
+    {
+        "code": "CS1010",
+        "name": "Introduction to Programming",
+        "department": "Computer Science",
+        "description": "Fundamentals of programming using Python. Covers logic and algorithms.",
+        "credits": 3,
+        "seatCap": 40,
+        "prerequisites": ["None"],
+        "type": "online",
+        "meetingTimes": null
+    },
+    {
+        "code": "CS2025",
+        "name": "Data Structures and Algorithms",
+        "department": "Computer Science",
+        "description": "Explores core data structures such as stacks, queues, and trees. Covers algorithm analysis.",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["CS1010"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "2:00 PM - 3:30 PM",
+            "Thursday": "2:00 PM - 3:30 PM"
+        }
+    },
+    {
+        "code": "CS2050",
+        "name": "Computer Architecture",
+        "department": "Computer Science",
+        "description": "Examines internal structure of modern processors, memory hierarchies, and instruction execution.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["CS1010"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "11:00 AM - 12:30 PM",
+            "Wednesday": "11:00 AM - 12:30 PM"
+        }
+    },
+    {
+        "code": "CS3055",
+        "name": "Operating Systems",
+        "department": "Computer Science",
+        "description": "Introduction to OS principles, including process management and memory allocation.",
+        "credits": 4,
+        "seatCap": 30,
+        "prerequisites": ["CS2025"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "3:00 PM - 4:30 PM",
+            "Wednesday": "3:00 PM - 4:30 PM"
+        }
+    },
+    {
+        "code": "MATH1050",
+        "name": "College Algebra",
+        "department": "Mathematics",
+        "description": "Core concepts in algebra, including functions, equations, and graphing techniques.",
+        "credits": 3,
+        "seatCap": 40,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "9:00 AM - 10:30 AM",
+            "Wednesday": "9:00 AM - 10:30 AM"
+        }
+    },
+    {
+        "code": "MATH2022",
+        "name": "Calculus",
+        "department": "Mathematics",
+        "description": "Comprehensive study of differential and integral calculus.",
+        "credits": 4,
+        "seatCap": 40,
+        "prerequisites": ["None"],
+        "type": "online",
+        "meetingTimes": null
+    },
+    {
+        "code": "MATH2085",
+        "name": "Discrete Mathematics",
+        "department": "Mathematics",
+        "description": "Introduction to logic, combinatorics, graph theory, and proofs.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "11:00 AM - 12:30 PM",
+            "Wednesday": "11:00 AM - 12:30 PM"
+        }
+    },
+    {
+        "code": "MATH3150",
+        "name": "Linear Algebra",
+        "department": "Mathematics",
+        "description": "Study of vector spaces, linear transformations, and matrices.",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["MATH2022"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "1:00 PM - 2:30 PM",
+            "Thursday": "1:00 PM - 2:30 PM"
+        }
+    },
+    {
+        "code": "ENG1050",
+        "name": "English Composition",
+        "department": "English",
+        "description": "Study and practice of written communication and essay development.",
+        "credits": 3,
+        "seatCap": 45,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "11:00 AM - 12:30 PM",
+            "Wednesday": "11:00 AM - 12:30 PM"
+        }
+    },
+    {
+        "code": "ENG2010",
+        "name": "American Literature",
+        "department": "English",
+        "description": "Analysis of major literary works in American history.",
+        "credits": 3,
+        "seatCap": 40,
+        "prerequisites": ["ENG1050"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "10:00 AM - 11:30 AM",
+            "Thursday": "10:00 AM - 11:30 AM"
+        }
+    },
+    {
+        "code": "ENG2090",
+        "name": "Creative Writing",
+        "department": "English",
+        "description": "Exploration of storytelling, poetry, and fictional writing techniques.",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["None"],
+        "type": "online",
+        "meetingTimes": null
+    },
+    {
+        "code": "ENG3125",
+        "name": "Shakespearean Studies",
+        "department": "English",
+        "description": "In-depth study of Shakespeare's works and their historical context.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["ENG2010"],
+        "type": "online",
+        "meetingTimes": null
+    },
+    {
+        "code": "HUM2100",
+        "name": "Philosophy and Ethics",
+        "department": "Humanities",
+        "description": "Exploration of philosophical thought and ethical reasoning.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "10:00 AM - 11:30 AM",
+            "Thursday": "10:00 AM - 11:30 AM"
+        }
+    },
+    {
+        "code": "HUM2200",
+        "name": "World Religions",
+        "department": "Humanities",
+        "description": "Study of major global religions and their impact on culture and society.",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["None"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Monday": "2:00 PM - 3:30 PM",
+            "Wednesday": "2:00 PM - 3:30 PM"
+        }
+    },
+    {
+        "code": "HUM3075",
+        "name": "Renaissance Art and Literature",
+        "department": "Humanities",
+        "description": "Examination of artistic and literary masterpieces of the Renaissance era.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["HUM2100"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "1:00 PM - 2:30 PM",
+            "Thursday": "1:00 PM - 2:30 PM"
+        }
+    },
+    {
+        "code": "HUM3150",
+        "name": "Mythology and Folklore",
+        "department": "Humanities",
+        "description": "Analysis of myths, legends, and folklore from various cultures.",
+        "credits": 3,
+        "seatCap": 30,
+        "prerequisites": ["None"],
+        "type": "online",
+        "meetingTimes": null
+    }
+]

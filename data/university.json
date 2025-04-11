@@ -1,0 +1,51 @@
+{
+    "universityName": "Kennesaw State University",
+    "address": "1000 Chastain Road, Kennesaw, GA 30144",
+    "currentSemester": "Spring 2025",
+    "addDropDeadline": "January 15, 2025",
+    "admissions": {
+        "phone": "770-423-6300",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Kennesaw Hall, Room 1300"
+    },
+    "financialAid": {
+        "phone": "770-423-6074",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Kennesaw Hall, Room 1200"
+    },
+    "bursars": {
+        "phone": "770-423-6310",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Kennesaw Hall, Room 1100"
+    },
+    "registrar": {
+        "phone": "770-423-6200",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Kennesaw Hall, Room 1400"
+    },
+    "advisors": {
+        "phone": "770-423-6600",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Various advising offices across campus"
+    },
+    "cafeteria": {
+        "phone": "770-423-6500",
+        "hours": "Monday-Friday, 7:00 AM - 8:00 PM",
+        "location": "Student Center"
+    },
+    "library": {
+        "phone": "770-423-6200",
+        "hours": "Monday-Friday, 8:00 AM - 10:00 PM",
+        "location": "Sturgis Library"
+    },
+    "campusPolice": {
+        "phone": "770-423-6666",
+        "hours": "24/7",
+        "location": "Campus Police Headquarters"
+    },
+    "medicalCenter": {
+        "phone": "770-423-6644",
+        "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+        "location": "Student Health Services Building"
+    }
+}
