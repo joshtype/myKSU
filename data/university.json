@@ -1,49 +1,59 @@
 {
-    "universityName": "Kennesaw State University",
+    "name": "Kennesaw State University",
+    "campus": "Kennesaw Campus",
     "address": "1000 Chastain Road, Kennesaw, GA 30144",
-    "currentSemester": "Spring 2025",
-    "addDropDeadline": "January 15, 2025",
+    "semester": "Spring 2026",
+    "addDropDeadline": "2025-08-21",
     "admissions": {
+        "name": "Admissions Office",
         "phone": "770-423-6300",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Kennesaw Hall, Room 1300"
     },
     "financialAid": {
+        "name": "Financial Aid",
         "phone": "770-423-6074",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Kennesaw Hall, Room 1200"
     },
     "bursars": {
+        "name": "Bursar's Office",
         "phone": "770-423-6310",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Kennesaw Hall, Room 1100"
     },
     "registrar": {
+        "name": "Registrar's Office",
         "phone": "770-423-6200",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Kennesaw Hall, Room 1400"
     },
-    "advisors": {
+    "advising": {
+        "name": "Advising Center",
         "phone": "770-423-6600",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Various advising offices across campus"
     },
     "cafeteria": {
-        "phone": "770-423-6500",
-        "hours": "Monday-Friday, 7:00 AM - 8:00 PM",
+        "name": "The Commons",
+        "phone": "478-578-2902",
+        "hours": "Monday-Friday, 7:00 AM - 7:00 PM; Saturday, 10:30 AM - 7:00 PM; Sunday, 10:30 AM - 9:00 PM",
         "location": "Student Center"
     },
     "library": {
+        "name": "Sturgis Library",
         "phone": "770-423-6200",
         "hours": "Monday-Friday, 8:00 AM - 10:00 PM",
         "location": "Sturgis Library"
     },
     "campusPolice": {
+        "name": "Campus Police",
         "phone": "770-423-6666",
         "hours": "24/7",
         "location": "Campus Police Headquarters"
     },
-    "medicalCenter": {
+    "healthServices": {
+        "name": "Student Health Services",
         "phone": "770-423-6644",
         "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
         "location": "Student Health Services Building"

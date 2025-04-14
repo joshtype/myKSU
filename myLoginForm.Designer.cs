@@ -1,6 +1,6 @@
 ﻿namespace myKSU_v3
 {
-    partial class myLoginForm
+    public partial class myLoginForm : Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -140,6 +140,7 @@
             login_helpBtn.TabIndex = 9;
             login_helpBtn.Text = "?";
             login_helpBtn.UseVisualStyleBackColor = false;
+            login_helpBtn.Click += login_helpBtn_Click;
             // 
             // login_footerLbl
             // 

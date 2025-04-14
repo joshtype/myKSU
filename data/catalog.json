@@ -94,21 +94,7 @@
         "meetingTimes": null
     },
     {
-        "code": "CS2025",
-        "name": "Data Structures and Algorithms",
-        "department": "Computer Science",
-        "description": "Explores core data structures such as stacks, queues, and trees. Covers algorithm analysis.",
-        "credits": 3,
-        "seatCap": 35,
-        "prerequisites": ["CS1010"],
-        "type": "in-person",
-        "meetingTimes": {
-            "Tuesday": "2:00 PM - 3:30 PM",
-            "Thursday": "2:00 PM - 3:30 PM"
-        }
-    },
-    {
-        "code": "CS2050",
+        "code": "CS2010",
         "name": "Computer Architecture",
         "department": "Computer Science",
         "description": "Examines internal structure of modern processors, memory hierarchies, and instruction execution.",
@@ -119,6 +105,20 @@
         "meetingTimes": {
             "Monday": "11:00 AM - 12:30 PM",
             "Wednesday": "11:00 AM - 12:30 PM"
+        }
+    },
+    {
+        "code": "CS2025",
+        "name": "Object-Oriented Programming",
+        "department": "Computer Science",
+        "description": "Lecture on OOP principles using Java. Group project required. ",
+        "credits": 3,
+        "seatCap": 35,
+        "prerequisites": ["CS1010"],
+        "type": "in-person",
+        "meetingTimes": {
+            "Tuesday": "2:00 PM - 3:30 PM",
+            "Thursday": "2:00 PM - 3:30 PM"
         }
     },
     {

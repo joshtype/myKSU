@@ -17,3 +17,4 @@ C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8
 C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU_v3\myKSU_v3\myKSU_v3\obj\Debug\net8.0-windows\ref\myKSU_v3.dll
 C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU_v3\myKSU_v3\myKSU_v3\obj\Debug\net8.0-windows\myKSU_v3.myHomeForm.resources
 C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU_v3\myKSU_v3\myKSU_v3\obj\Debug\net8.0-windows\myKSU_v3.myCoursesForm.resources
+C:\Users\atomi\OneDrive\Desktop\KSU\Spring25\SWE3623_SoftwareReqs\Project_Group8\D5_PrototypeAndReview\myKSU_v3\myKSU_v3\myKSU_v3\obj\Debug\net8.0-windows\myKSU_v3.sourcelink.json

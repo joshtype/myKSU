@@ -14,6 +14,6 @@ namespace myKSU_v3.Library
         public List<string> prerequisites { get; set; } = new();
         public Dictionary<string, string>? meetingTimes { get; set; }  // ? = nullable (for online courses)
 
-        public override string ToString() { return $"[{code}] {name}"; }
+        public override string ToString() { return $"{code}: {name}, {department} department."; }
     }
 }

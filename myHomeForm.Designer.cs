@@ -67,6 +67,7 @@
             home_myCoursesBtn.TabIndex = 1;
             home_myCoursesBtn.Text = "myCourses";
             home_myCoursesBtn.UseVisualStyleBackColor = false;
+            home_myCoursesBtn.Click += home_myCoursesBtn_Click;
             // 
             // home_myRegistrationBtn
             // 
@@ -162,6 +163,7 @@
             home_exitBtn.TabIndex = 13;
             home_exitBtn.Text = "X";
             home_exitBtn.UseVisualStyleBackColor = false;
+            home_exitBtn.Click += home_exitBtn_Click;
             // 
             // home_btmPnl
             // 
@@ -199,7 +201,7 @@
             Controls.Add(home_btmPnl);
             Controls.Add(home_topPicBox);
             Name = "myHomeForm";
-            Text = "myHomeForm";
+            Text = "myHome";
             ((System.ComponentModel.ISupportInitialize)home_topPicBox).EndInit();
             home_btmPnl.ResumeLayout(false);
             home_btmPnl.PerformLayout();
