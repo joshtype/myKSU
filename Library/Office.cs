@@ -1,4 +1,5 @@
 ﻿using System;
+using myKSU_v3;
 
 namespace myKSU_v3.Library
 {
@@ -9,6 +10,6 @@ namespace myKSU_v3.Library
         public string hours { get; set; }
         public string location { get; set; }
 
-        public override string ToString() { return $"{name}: {location} ({phone})"; }
+        public override string ToString() { return $"{this.name}: {this.phone} / {this.hours} / {this.location}."; }
     }
 }

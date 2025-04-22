@@ -1,5 +1,5 @@
-﻿using myKSU_v3.Library;
-using System;
+﻿using System;
+using myKSU_v3;
 
 namespace myKSU_v3.Library
 {
@@ -7,53 +7,49 @@ namespace myKSU_v3.Library
     {
         public List<Course> catalogFall2026 { get; set; } = new();
 
-        //
-        // ENROLL & UNENROLL COURSES
-        //
-        public bool enrollCourse(Student student, Course course, University university)
+        // ENROLL A COURSE
+        public string enrollCourse(Student student, Course course, University university)
+        {
+            // dont allow if past add/drop deadlin
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            if (today > university.addDropDeadline) 
+                return "FAILURE: It is past the add/drop deadline.";
+
+            // dont allow if already enrolled
+            //if (student.enrolledCourses.Any(c => c.code == course.code))
+              //  return "FAILURE: You are already enrolled in this course.";
+
+            // dont allow if course level > than student.standing
+            int courseLevel = extractCourseLevel(course.code);
+            int maxAllowed = maxLevelPerStanding(student.standing);
+            if(courseLevel > maxAllowed)
+                return "FAILURE: course level is too high.";
+
+            // otherwise, allow enrollment
+            student.enrolledCourses.Add(course);
+            return "SUCCESS";
+        }
+
+        // UNENROLL A COURSE
+        public string unenrollCourse(Student student, Course course, University university)
         {
             var today = DateOnly.FromDateTime(DateTime.Now);
 
-            if (today > university.addDropDeadline) return false;
+            // do not allow if current date is past add/drop deadline
+            if (today > university.addDropDeadline)
+                return "FAILURE: It is past the add/drop deadline.";
 
-            if (!student.enrolledCourses.Any(c => c.code == course.code))
-            {
-                student.enrolledCourses.Add(course);
-                return true;
-            }
-            return false;
+            // do not allow if he student is not enrolled in the course 
+            if (student.enrolledCourses.Any(c => c.code == course.code))
+                return "FAILURE: You are not enrolled in this course.";
+
+            return "SUCCESS";
         }
 
-        public bool unenrollCourse(Student student, Course course, University university)
-        {
-            var today = DateOnly.FromDateTime(DateTime.Now);
-
-            if (today > university.addDropDeadline) return false;
-
-            return student.enrolledCourses.RemoveAll(c => c.code == course.code) > 0 ;
-        }
-        
-        //
-        // SEARCH METHODS
-        //
-        public bool isStudentEnrolled(Student student, Course course)
-        {
-            // helper to check if student has enrolled the course already
-            return student.enrolledCourses.Any(c => c.code == course.code);
-        }
-        public Course? searchByCode(string code)
-        {
-            // search for exact course codes
-            foreach (var course in catalogFall2026)
-            {
-                if (course.code.Equals(code, StringComparison.OrdinalIgnoreCase)) return course;
-            }
-            return null;
-        }
+        // SEARCH catalogFall2026 BY INPUT KEYWORD
         public List<Course> searchByKeyword(Student student, string keyword)
         {
-            // search course names and coded for argument keyword
-            keyword = keyword.ToLower();
+            // search course names and codes for argument keyword
             var matches = new List<Course>();
 
             foreach (var course in catalogFall2026)
@@ -71,28 +67,14 @@ namespace myKSU_v3.Library
             }
             return matches;
         }
+        private bool isStudentEnrolled(Student student, Course course)
+        {
+            // Helper to check if student is currently enrolled in the course
+            return student.enrolledCourses.Any(c => c.code == course.code);
+        }
 
-        //
-        // COURSE RECOMMENDATIONS
-        //
-        private int extractCourseLevel(string code)
-        {
-            // helper to get course level from course code
-            string number = new string(code.Where(char.IsDigit).ToArray());
-            return int.TryParse(number, out int level) ? level : 0;
-        }
-        private int maxLevelPerStanding(string standing)
-        {
-            // helper to define course code levels per student class standings
-            return standing.ToLower() switch
-            {
-                "freshman" => 1999,
-                "sophomore" => 2999,
-                "junior" => 3999,
-                "senior" => 4999,
-                _ => 2999           // default value for test student
-            };
-        }
+
+        // GENERATE COURSE RECOMMENDATIONS
         public List<Course> generateRecommendations(Student student)
         {
             // get top 10 recommended courses based on standing & prerequisites, sorted by major
@@ -100,14 +82,14 @@ namespace myKSU_v3.Library
 
             foreach (var course in catalogFall2026)
             {
-                // Filter 1: exclude courses enrolled currently or previously
+                // FILTER 1: exclude courses enrolled currently or previously
                 if (student.enrolledCourses.Any(c => c.code == course.code) ||
                     student.previousCourses.Any(c => c.code == course.code)) continue;
 
-                // Filter 2: exclude courses not available for student's standing
+                // FILTER 2: exclude courses not available for student's standing
                 if (extractCourseLevel(course.code) > maxLevelPerStanding(student.standing)) continue;
 
-                // Filter 3: exclude courses with prereqs not found in student's previousCourses list
+                // FILTER 3: exclude courses with prereqs not found in student's previousCourses list
                 if (course.prerequisites != null && course.prerequisites.Any(p =>
                     p != "None" && !student.previousCourses.Any(pc =>
                     pc.code.Equals(p, StringComparison.OrdinalIgnoreCase)))) continue;
@@ -118,11 +100,28 @@ namespace myKSU_v3.Library
             // sort to front courses where course department == student major
             var sortedCourses = recommendations
                 .OrderByDescending(c => c.department.Equals(student.major, StringComparison.OrdinalIgnoreCase))
-                .ThenBy(c => c.code) 
+                .ThenBy(c => c.code)
                 .Take(10)
                 .ToList();
             return sortedCourses;
         }
-        
+        private int extractCourseLevel(string code)
+        {
+            // Helper to get course level from course code
+            string number = new string(code.Where(char.IsDigit).ToArray());
+            return int.TryParse(number, out int level) ? level : 0;
+        }
+        private int maxLevelPerStanding(string standing)
+        {
+            // Helper to define course code levels per student class standings
+            return standing.ToLower() switch
+            {
+                "freshman" => 1999,
+                "sophomore" => 2999,
+                "junior" => 3999,
+                "senior" => 4999,
+                _ => 2999           // default value for test student
+            };
+        }
     }
 }

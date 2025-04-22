@@ -1,8 +1,17 @@
 using myKSU_v3.Library;
+
 namespace myKSU_v3
 {
     public partial class myLoginForm : Form
     {
+        // WILL BE FILLED FROM JSON OR USING OTHER OBJECTS
+        private Student student;
+        private CourseManager courseManager;
+        private University university;
+        private ChargeAccount chargeAccount;
+        private Profile profile;
+        private AdvisorBot bot;
+
         public myLoginForm()
         {
             InitializeComponent();
@@ -10,42 +19,52 @@ namespace myKSU_v3
 
         private void login_authenticateBtn_Click(object sender, EventArgs e)
         {
-            login_errorLbl.Visible = false;      // reset error label to invisible
+            login_errorLbl.Visible = false;             // hide error label
 
-            string email = login_emailTxt.Text.Trim();  // get strings from text inputs
+            string email = login_emailTxt.Text.Trim();  // get user input from text boxes
             string pass = login_passTxt.Text.Trim();
             string id = login_idTxt.Text.Trim();
 
-            // hardcoded authentication
+            // authentication
             if (email == "" || pass == "" || id == "")
             {
                 MessageBox.Show("Please enter all fields.");
                 return;
             }
-            if (email == "testEmail@ksu.edu" && pass == "testPass1" && id == "9")
-            {
-                // create object models from json files
-                Student student = DataLoader.loadStudent();              
-                CourseManager courseManager = DataLoader.loadCourseManager();  // catalogFall2026 & course-related tasks
-                University university = DataLoader.loadUniversity();         
 
-                // create forms so objects & forms can be passed between without reinitializiing
-                myHomeForm homeForm = new myHomeForm(student, courseManager, university);
+            if (email == "email" && pass == "pass" && id == "1")
+            {
+                this.student = DataLoader.loadStudent();                         // fill objects from json files
+                this.courseManager = DataLoader.loadCourseManager();
+                this.university = DataLoader.loadUniversity();
+                this.chargeAccount = DataLoader.loadChargeAccount();
+                this.profile = DataLoader.loadProfile();
+                this.bot = new AdvisorBot(student, courseManager, university);  // use above fields to init advisor object
+
+                myHomeForm homeForm = new myHomeForm(student, courseManager, university, chargeAccount, profile, bot);
                 homeForm.Show();
-                this.Hide();
+                this.Hide();      // do not use Close() as it will reset object states
             }
             else
             {
-                login_errorLbl.Visible = true;  // display error label
-                login_emailTxt.Clear();         // clear text inputs
+                login_errorLbl.Visible = true;          // error label set to visible
+                login_prototypeHelpLbl.Visible = true;  // error label for prototype
+
+                login_emailTxt.Clear();                 // clear text inputs
                 login_passTxt.Clear();
                 login_idTxt.Clear();
             }
         }
 
+        // HELP & EXIT BUTTONS
         private void login_helpBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Prototype test credentials:\nKSU Email: testEmail@ksu.edu\nKSU Password: testPass1\nKSU ID: 9");
+            MessageBox.Show("Prototype test credentials:\nKSU Email = 'email'\nKSU Password = 'pass'\nKSU ID = '1'");
+        }
+
+        private void login_exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();  // reset states & close app
         }
     }
 }
