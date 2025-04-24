@@ -13,7 +13,7 @@ namespace myKSU_v3
 {
     public partial class myHomeForm : Form
     {
-        // STORE OBJECTS FROM LOGIN & PASSED BETWEEN HOME & FORMS TO MAINTAIN OBJECT STATES
+        // STORE ALL OBJECTS TO PASS BETWEEN FORMS
         private Student student { get; set; }
         private CourseManager courseManager { get; set; }
         private University university { get; set; }
@@ -21,7 +21,7 @@ namespace myKSU_v3
         private Profile profile { get; set; }
         private AdvisorBot bot { get; set; }
 
-        // GET OBJECTS FROM LOGIN OR WHEN NAVIGATING BACK TO HOME
+        // INITIALIZE WITH OBJECTS PASSED IN FROM LOGIN FORM
         public myHomeForm(Student s, CourseManager cm, University u, ChargeAccount ca, Profile p, AdvisorBot ab)
         {
             InitializeComponent();
@@ -46,13 +46,16 @@ namespace myKSU_v3
 
             if (result == DialogResult.Yes)
             {
-                myLoginForm loginForm = new myLoginForm();  // logout = reset states & return to myLogin
+                myLoginForm loginForm = new myLoginForm();  // logout = reset states & return to myLoginForm
                 loginForm.Show();
                 this.Close();
             }
         }
 
+
+        //
         // NAVIGATION
+        //
         private void home_myCoursesBtn_Click(object sender, EventArgs e)
         {
             myCoursesForm coursesForm = new myCoursesForm(this, this.student, this.courseManager, this.university, this.bot);
@@ -84,7 +87,10 @@ namespace myKSU_v3
             this.Hide();
         }
 
+
+        //
         // CHATBOT LOGIC
+        //
         private void chatbot_owlPic_Click(object sender, EventArgs e) =>
             chatbot_mainPnl.Visible = !chatbot_mainPnl.Visible;                    // visibility set to opposite of current state
 
@@ -95,12 +101,14 @@ namespace myKSU_v3
             if (string.IsNullOrEmpty(userInput))
                 chatbot_replyText.Text = "Hoot! You forgot to ask me a question!";  // confirm input len > 0
 
-            string reply = bot.parseChatbotReply(userInput);                        // pass input to be parsed & keyword/regex matched
+            string reply = bot.Respond(userInput);                                  // pass input to be parsed & keyword matched
             chatbot_replyText.Text = reply;                                         // show reponse in output region
         }
 
         private void chatbot_helpLbl_Click(object sender, EventArgs e) =>
-            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, enrolled courses, and previous courses.";
+            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, and enrolled courses. " +
+            "I can also give other answers like the upcoming and info on offices like the Registrar's Office or Tech Support." +
+            "I can also provide info about KSU like address, current semester, and upcoming add/drop deadline.";
 
         private void chatbot_exitLbl_Click(object sender, EventArgs e) =>
             chatbot_mainPnl.Visible = false;                                        // hide panel

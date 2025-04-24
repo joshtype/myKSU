@@ -32,26 +32,31 @@ namespace myKSU_v3
 
             showAllCourses();  // show all courses in catalog.json on form load
 
-            registration_deptSelection.SelectedIndex = 0;       // set drop-downs to first option on load
+            registration_deptSelection.SelectedIndex = 0;               // set drop-downs to first option on load
             registration_semesterSelection.SelectedIndex = 0;
 
-            chatbot_mainPnl.Visible = false;                    // ensure chatbot panel is hidden on load
+            chatbot_mainPnl.Visible = false;                            // ensure chatbot panel is hidden on load
+
+            registration_catalogDataGrid.ScrollBars = ScrollBars.Both;                                // show both scrollbars
+            registration_catalogDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;  // enable dynamic sizing 
+            registration_catalogDataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;    
         }
 
 
-        // BACK TO HOME NAV & HELP BUTTONS
+        //
+        // HELP & BACK TO HOME BUTTONS
+        //
+        private void registration_helpBtn_Click(object sender, EventArgs e) => MessageBox.Show("Placeholder text for myRegistration.");
         private void registration_backBtn_Click(object sender, EventArgs e)
         {
             homeForm.Show();
             this.Hide();
         }
-        private void registration_helpBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Placeholder text for myRegistration.");
-        }
 
 
+        //
         // POPULATE WITH ALL COURSES 
+        //
         private void showAllCourses()
         {
             registration_catalogDataGrid.Rows.Clear();  // reset datagrid on form load
@@ -84,7 +89,9 @@ namespace myKSU_v3
         }
 
 
+        //
         // APPLY KEYWORD & DEPARTMENT FILTERED COURSES
+        //
         private void displayResults(List<Course> searchResultCourses)
         {
             registration_catalogDataGrid.Rows.Clear();  // clear current displayed courses
@@ -112,7 +119,9 @@ namespace myKSU_v3
         }
 
 
+        //
         // FILTER CURRENTLY SHOWN COURSES BY DEPARTMENT
+        //
         private void registration_deptSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedDepartment = registration_deptSelection.SelectedItem?.ToString();
@@ -130,16 +139,19 @@ namespace myKSU_v3
         }
 
 
+        //
         // SEARCH CURRENTLY DISPLAYED COURSES BY KEYWORD
+        //
         private void registration_searchBtn_Click(object sender, EventArgs e)
         {
             string keyword = registration_searchBox.Text.Trim().ToLower();  // user input
 
             // filter catalog by keyword in name & code, ignore currently/previously enrolled courses
-            List<Course> filteredCourses = courseManager.searchByKeyword(student, keyword);
+            List<Course> filteredCourses = courseManager.SearchByKeyword(student, keyword);
 
             displayResults(filteredCourses);  // update list of courses
         }
+
 
         //
         // RESET DISPLAYED COURSES TO ENTIRE CATALOG
@@ -151,12 +163,13 @@ namespace myKSU_v3
             showAllCourses();                      // reload datagrid to all courses
         }
 
+
         //
         // GET RECOMMENDED COURSES
         //
         private void registration_recommendedBtn_Click(object sender, EventArgs e)
         {
-            List<Course> recommendedCourses = courseManager.generateRecommendations(student);
+            List<Course> recommendedCourses = courseManager.GenerateRecommendations(student);
 
             if (recommendedCourses != null && recommendedCourses.Count > 0)
             {
@@ -176,19 +189,21 @@ namespace myKSU_v3
         }
 
 
+        //
         // ENROLL SELECTED COURSE
+        //
         private void registration_enrollBtn_Click(object sender, EventArgs e)
         {
+            if (registration_catalogDataGrid.SelectedRows.Count == 0)  // Check if a row is selected
             {
-                MessageBox.Show("No course has been selected.");
-                return;  // exit method
+                MessageBox.Show("No course has been selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            var selectedRow = registration_catalogDataGrid.SelectedRows[0];  // get course from results
-            string courseCode = selectedRow.Cells["code"].Value.ToString();  // get course code
+            var selectedRow = registration_catalogDataGrid.SelectedRows[0];  // Get selected row
+            string courseCode = selectedRow.Cells["code"].Value.ToString();  // Get course code
 
-            Course selectedCourse = courseManager.catalogFall2026
-                .FirstOrDefault(c => c.code == courseCode);
+            Course selectedCourse = courseManager.catalogFall2026.FirstOrDefault(c => c.code == courseCode);
 
             if (selectedCourse == null)
             {
@@ -205,20 +220,21 @@ namespace myKSU_v3
 
             if (confirm == DialogResult.Yes)
             {
-                // if above check pass, attempt to enroll course & inform student of results
-                string result = courseManager.enrollCourse(student, selectedCourse, university);
+                string result = courseManager.EnrollCourse(student, selectedCourse, university);
                 MessageBox.Show(result, "Enrollment Attempt Status:", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if (result == "Success")
-                    DataLoader.saveStudentData(student);  // rewrite file if enrollment successful                                              
+                if (result == "SUCCESS")  // Fix capitalization for consistency
+                    DataLoader.SaveStudentData(student);
             }
-
         }
 
+
+        //
         // CHATBOT LOGIC
+        //
         private void chatbot_owlPic_Click(object sender, EventArgs e) =>
             chatbot_mainPnl.Visible = !chatbot_mainPnl.Visible;                    // visibility set to opposite of current state
-
+        
         private void chatbot_askBtn_Click(object sender, EventArgs e)
         {
             string userInput = chatbot_questionTextBox.Text.Trim();                // get input from textbox
@@ -226,14 +242,16 @@ namespace myKSU_v3
             if (string.IsNullOrEmpty(userInput))
                 chatbot_replyText.Text = "Hoot! You forgot to ask me a question!";  // confirm input len > 0
 
-            string reply = bot.parseChatbotReply(userInput);                    // pass input to be parsed & keyword/regex matched
+            string reply = bot.Respond(userInput);                                  // pass input to be parsed & keyword matched
             chatbot_replyText.Text = reply;                                         // show reponse in output region
         }
-
+        
         private void chatbot_helpLbl_Click(object sender, EventArgs e) =>
-            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, and enrolled courses. I can also give other answers like the next registration add/drop deadline and info on offices like the Registrar's Office or Campus Police.";
-
+            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, and enrolled courses. " +
+            "I can also give other answers like the upcoming and info on offices like the Registrar's Office or Tech Support." +
+            "I can also provide info about KSU like address, current semester, and upcoming add/drop deadline.";
+        
         private void chatbot_exitLbl_Click(object sender, EventArgs e) =>
-            chatbot_mainPnl.Visible = false;                                        // hide panel
+            chatbot_mainPnl.Visible = false;                                        // hide panel   
     }
 }

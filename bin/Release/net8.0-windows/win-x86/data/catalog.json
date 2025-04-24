@@ -7,7 +7,7 @@
         "credits": 4,
         "seatCap": 30,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "10:00 AM - 11:30 AM",
             "Wednesday": "10:30 AM - 12:00 PM",
@@ -22,7 +22,7 @@
         "credits": 3,
         "seatCap": 35,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "10:00 AM - 11:30 AM",  
             "Wednesday": "10:30 AM - 12:00 PM"
@@ -36,7 +36,7 @@
         "credits": 4,
         "seatCap": 30,
         "prerequisites": ["BIO1010"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "2:00 PM - 3:30 PM",
             "Thursday": "2:00 PM - 3:30 PM"
@@ -50,7 +50,7 @@
         "credits": 3,
         "seatCap": 25,
         "prerequisites": ["BIO1010"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "2:00 PM - 3:30 PM",
             "Thursday": "2:00 PM - 3:30 PM" 
@@ -64,8 +64,8 @@
         "credits": 4,
         "instructor": "Dr. A. Einstein",
         "prerequisites": ["MATH2022"],
-        "courseType": "online",
-        "type": "online",
+        "courseType": "Online",
+        "type": "Online",
         "meetingTimes": null
     },
     {
@@ -76,7 +76,7 @@
         "credits": 3,
         "seatCap": 20,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "2:00 PM - 3:30 PM",
             "Wednesday": "10:15 AM - 11:30 AM"
@@ -90,7 +90,7 @@
         "credits": 3,
         "seatCap": 40,
         "prerequisites": ["None"],
-        "type": "online",
+        "type": "Online",
         "meetingTimes": null
     },
     {
@@ -101,7 +101,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["CS1010"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "11:00 AM - 12:30 PM",
             "Wednesday": "11:00 AM - 12:30 PM"
@@ -115,7 +115,7 @@
         "credits": 3,
         "seatCap": 35,
         "prerequisites": ["CS1010"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": 
         {
             "Tuesday": "2:00 PM - 3:30 PM",
@@ -132,7 +132,7 @@
         "seatCap": 30,
         "prerequisites": 
             ["CS2025"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes":
             {"Monday": "3:00 PM - 4:30 PM",
             "Wednesday": "3:00 PM - 4:30 PM"}     
@@ -145,7 +145,7 @@
         "credits": 3,
         "seatCap": 40,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "9:00 AM - 10:30 AM",
             "Wednesday": "9:00 AM - 10:30 AM"
@@ -159,7 +159,7 @@
         "credits": 4,
         "seatCap": 40,
         "prerequisites": ["None"],
-        "type": "online",
+        "type": "Online",
         "meetingTimes": null
     },
     {
@@ -170,7 +170,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "11:00 AM - 12:30 PM",
             "Wednesday": "11:00 AM - 12:30 PM"
@@ -184,7 +184,7 @@
         "credits": 3,
         "seatCap": 35,
         "prerequisites": ["MATH2022"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "1:00 PM - 2:30 PM",
             "Thursday": "1:00 PM - 2:30 PM"
@@ -198,7 +198,7 @@
         "credits": 3,
         "seatCap": 45,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "11:00 AM - 12:30 PM",
             "Wednesday": "11:00 AM - 12:30 PM"
@@ -212,7 +212,7 @@
         "credits": 3,
         "seatCap": 40,
         "prerequisites": ["ENG1050"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "10:00 AM - 11:30 AM",
             "Thursday": "10:00 AM - 11:30 AM"
@@ -226,7 +226,7 @@
         "credits": 3,
         "seatCap": 35,
         "prerequisites": ["None"],
-        "type": "online",
+        "type": "Online",
         "meetingTimes": null
     },
     {
@@ -237,7 +237,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["ENG2010"],
-        "type": "online",
+        "type": "Online",
         "meetingTimes": null
     },
     {
@@ -248,7 +248,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "10:00 AM - 11:30 AM",
             "Thursday": "10:00 AM - 11:30 AM"
@@ -262,7 +262,7 @@
         "credits": 3,
         "seatCap": 35,
         "prerequisites": ["None"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Monday": "2:00 PM - 3:30 PM",
             "Wednesday": "2:00 PM - 3:30 PM"
@@ -276,7 +276,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["HUM2100"],
-        "type": "in-person",
+        "type": "In-Person",
         "meetingTimes": {
             "Tuesday": "1:00 PM - 2:30 PM",
             "Thursday": "1:00 PM - 2:30 PM"
@@ -290,7 +290,7 @@
         "credits": 3,
         "seatCap": 30,
         "prerequisites": ["None"],
-        "type": "online",
+        "type": "Online",
         "meetingTimes": null
     }
 ]

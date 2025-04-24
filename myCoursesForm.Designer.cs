@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myCoursesForm));
             courses_mainPnl = new Panel();
-            panel1 = new Panel();
-            courses_semesterLbl = new Label();
-            courses_datagridHeaderLbl = new Label();
-            chatbot_owlPic = new PictureBox();
             chatbot_mainPnl = new Panel();
             chatbot_topPnl = new Panel();
             chatbot_exitLbl = new Label();
@@ -45,6 +41,10 @@
             chatbot_askBtn = new Button();
             chatbot_questionTextBox = new TextBox();
             chatbot_greetLbl = new Label();
+            panel1 = new Panel();
+            courses_semesterLbl = new Label();
+            courses_datagridHeaderLbl = new Label();
+            chatbot_owlPic = new PictureBox();
             courses_helpBtn = new Button();
             courses_unenrollBtn = new Button();
             courses_backBtn = new Button();
@@ -72,12 +72,12 @@
             courseList_mainPnl = new Panel();
             courses_enrolledList = new ListBox();
             courses_mainPnl.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).BeginInit();
             chatbot_mainPnl.SuspendLayout();
             chatbot_topPnl.SuspendLayout();
             chatbot_replyPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chatbot_replyPic).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).BeginInit();
             courseInfo_topPnl.SuspendLayout();
             myCoursesTitlePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)courses_titleIcon).BeginInit();
@@ -89,9 +89,9 @@
             // courses_mainPnl
             // 
             courses_mainPnl.BackColor = Color.Transparent;
+            courses_mainPnl.Controls.Add(chatbot_mainPnl);
             courses_mainPnl.Controls.Add(panel1);
             courses_mainPnl.Controls.Add(chatbot_owlPic);
-            courses_mainPnl.Controls.Add(chatbot_mainPnl);
             courses_mainPnl.Controls.Add(courses_helpBtn);
             courses_mainPnl.Controls.Add(courses_unenrollBtn);
             courses_mainPnl.Controls.Add(courses_backBtn);
@@ -105,46 +105,6 @@
             courses_mainPnl.Size = new Size(521, 699);
             courses_mainPnl.TabIndex = 18;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(courses_semesterLbl);
-            panel1.Controls.Add(courses_datagridHeaderLbl);
-            panel1.Location = new Point(41, 60);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(425, 36);
-            panel1.TabIndex = 40;
-            // 
-            // courses_semesterLbl
-            // 
-            courses_semesterLbl.AutoSize = true;
-            courses_semesterLbl.Location = new Point(203, 9);
-            courses_semesterLbl.Name = "courses_semesterLbl";
-            courses_semesterLbl.Size = new Size(151, 20);
-            courses_semesterLbl.TabIndex = 1;
-            courses_semesterLbl.Text = "[registeringSemester]";
-            // 
-            // courses_datagridHeaderLbl
-            // 
-            courses_datagridHeaderLbl.AutoSize = true;
-            courses_datagridHeaderLbl.Location = new Point(4, 9);
-            courses_datagridHeaderLbl.Name = "courses_datagridHeaderLbl";
-            courses_datagridHeaderLbl.Size = new Size(203, 20);
-            courses_datagridHeaderLbl.TabIndex = 0;
-            courses_datagridHeaderLbl.Text = "Courses currently enrolled for";
-            // 
-            // chatbot_owlPic
-            // 
-            chatbot_owlPic.BackColor = Color.Transparent;
-            chatbot_owlPic.Image = (Image)resources.GetObject("chatbot_owlPic.Image");
-            chatbot_owlPic.Location = new Point(441, 637);
-            chatbot_owlPic.Name = "chatbot_owlPic";
-            chatbot_owlPic.Size = new Size(68, 62);
-            chatbot_owlPic.SizeMode = PictureBoxSizeMode.StretchImage;
-            chatbot_owlPic.TabIndex = 39;
-            chatbot_owlPic.TabStop = false;
-            chatbot_owlPic.Click += chatbot_owlPic_Click;
-            // 
             // chatbot_mainPnl
             // 
             chatbot_mainPnl.BackColor = Color.LightYellow;
@@ -154,10 +114,10 @@
             chatbot_mainPnl.Controls.Add(chatbot_askBtn);
             chatbot_mainPnl.Controls.Add(chatbot_questionTextBox);
             chatbot_mainPnl.Controls.Add(chatbot_greetLbl);
-            chatbot_mainPnl.Location = new Point(94, 484);
+            chatbot_mainPnl.Location = new Point(95, 391);
             chatbot_mainPnl.Name = "chatbot_mainPnl";
-            chatbot_mainPnl.Size = new Size(340, 186);
-            chatbot_mainPnl.TabIndex = 38;
+            chatbot_mainPnl.Size = new Size(340, 259);
+            chatbot_mainPnl.TabIndex = 48;
             chatbot_mainPnl.Visible = false;
             // 
             // chatbot_topPnl
@@ -175,7 +135,7 @@
             // chatbot_exitLbl
             // 
             chatbot_exitLbl.AutoSize = true;
-            chatbot_exitLbl.Location = new Point(311, 2);
+            chatbot_exitLbl.Location = new Point(316, 1);
             chatbot_exitLbl.Name = "chatbot_exitLbl";
             chatbot_exitLbl.Size = new Size(18, 20);
             chatbot_exitLbl.TabIndex = 3;
@@ -185,7 +145,7 @@
             // chatbot_helpLbl
             // 
             chatbot_helpLbl.AutoSize = true;
-            chatbot_helpLbl.Location = new Point(10, 2);
+            chatbot_helpLbl.Location = new Point(2, 1);
             chatbot_helpLbl.Name = "chatbot_helpLbl";
             chatbot_helpLbl.Size = new Size(16, 20);
             chatbot_helpLbl.TabIndex = 2;
@@ -201,7 +161,7 @@
             chatbot_replyPnl.Controls.Add(label4);
             chatbot_replyPnl.Location = new Point(12, 83);
             chatbot_replyPnl.Name = "chatbot_replyPnl";
-            chatbot_replyPnl.Size = new Size(317, 95);
+            chatbot_replyPnl.Size = new Size(317, 169);
             chatbot_replyPnl.TabIndex = 34;
             // 
             // chatbot_replyText
@@ -209,13 +169,14 @@
             chatbot_replyText.Location = new Point(36, 5);
             chatbot_replyText.Multiline = true;
             chatbot_replyText.Name = "chatbot_replyText";
-            chatbot_replyText.Size = new Size(274, 83);
+            chatbot_replyText.ScrollBars = ScrollBars.Vertical;
+            chatbot_replyText.Size = new Size(274, 155);
             chatbot_replyText.TabIndex = 31;
             // 
             // chatbot_replyPic
             // 
             chatbot_replyPic.Image = (Image)resources.GetObject("chatbot_replyPic.Image");
-            chatbot_replyPic.Location = new Point(3, 39);
+            chatbot_replyPic.Location = new Point(3, 135);
             chatbot_replyPic.Name = "chatbot_replyPic";
             chatbot_replyPic.Size = new Size(27, 25);
             chatbot_replyPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -260,6 +221,46 @@
             chatbot_greetLbl.Size = new Size(323, 20);
             chatbot_greetLbl.TabIndex = 2;
             chatbot_greetLbl.Text = "I'm Hooty, your digital advisor! How can I help?";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(courses_semesterLbl);
+            panel1.Controls.Add(courses_datagridHeaderLbl);
+            panel1.Location = new Point(41, 60);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(425, 36);
+            panel1.TabIndex = 40;
+            // 
+            // courses_semesterLbl
+            // 
+            courses_semesterLbl.AutoSize = true;
+            courses_semesterLbl.Location = new Point(203, 9);
+            courses_semesterLbl.Name = "courses_semesterLbl";
+            courses_semesterLbl.Size = new Size(151, 20);
+            courses_semesterLbl.TabIndex = 1;
+            courses_semesterLbl.Text = "[registeringSemester]";
+            // 
+            // courses_datagridHeaderLbl
+            // 
+            courses_datagridHeaderLbl.AutoSize = true;
+            courses_datagridHeaderLbl.Location = new Point(4, 9);
+            courses_datagridHeaderLbl.Name = "courses_datagridHeaderLbl";
+            courses_datagridHeaderLbl.Size = new Size(203, 20);
+            courses_datagridHeaderLbl.TabIndex = 0;
+            courses_datagridHeaderLbl.Text = "Courses currently enrolled for";
+            // 
+            // chatbot_owlPic
+            // 
+            chatbot_owlPic.BackColor = Color.Transparent;
+            chatbot_owlPic.Image = (Image)resources.GetObject("chatbot_owlPic.Image");
+            chatbot_owlPic.Location = new Point(441, 637);
+            chatbot_owlPic.Name = "chatbot_owlPic";
+            chatbot_owlPic.Size = new Size(68, 62);
+            chatbot_owlPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            chatbot_owlPic.TabIndex = 39;
+            chatbot_owlPic.TabStop = false;
+            chatbot_owlPic.Click += chatbot_owlPic_Click;
             // 
             // courses_helpBtn
             // 
@@ -572,9 +573,6 @@
             Name = "myCoursesForm";
             Text = "[ myCourses ]";
             courses_mainPnl.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).EndInit();
             chatbot_mainPnl.ResumeLayout(false);
             chatbot_mainPnl.PerformLayout();
             chatbot_topPnl.ResumeLayout(false);
@@ -582,6 +580,9 @@
             chatbot_replyPnl.ResumeLayout(false);
             chatbot_replyPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chatbot_replyPic).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).EndInit();
             courseInfo_topPnl.ResumeLayout(false);
             courseInfo_topPnl.PerformLayout();
             myCoursesTitlePnl.ResumeLayout(false);
@@ -627,6 +628,9 @@
         private Panel myCoursesTitlePnl;
         private Label coursesTitleLbl;
         private PictureBox chatbot_owlPic;
+        private Panel panel1;
+        private Label courses_semesterLbl;
+        private Label courses_datagridHeaderLbl;
         private Panel chatbot_mainPnl;
         private Panel chatbot_topPnl;
         private Label chatbot_exitLbl;
@@ -638,8 +642,5 @@
         private Button chatbot_askBtn;
         private TextBox chatbot_questionTextBox;
         private Label chatbot_greetLbl;
-        private Panel panel1;
-        private Label courses_semesterLbl;
-        private Label courses_datagridHeaderLbl;
     }
 }

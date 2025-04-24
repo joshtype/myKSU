@@ -53,6 +53,7 @@
             time = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
             code = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             schedule_mainPnl.SuspendLayout();
             chatbot_mainPnl.SuspendLayout();
             chatbot_topPnl.SuspendLayout();
@@ -67,6 +68,7 @@
             // schedule_mainPnl
             // 
             schedule_mainPnl.BackgroundImage = (Image)resources.GetObject("schedule_mainPnl.BackgroundImage");
+            schedule_mainPnl.Controls.Add(label1);
             schedule_mainPnl.Controls.Add(chatbot_mainPnl);
             schedule_mainPnl.Controls.Add(chatbot_owlPic);
             schedule_mainPnl.Controls.Add(schedule_helpBtn);
@@ -89,10 +91,10 @@
             chatbot_mainPnl.Controls.Add(chatbot_askBtn);
             chatbot_mainPnl.Controls.Add(chatbot_questionTextBox);
             chatbot_mainPnl.Controls.Add(chatbot_greetLbl);
-            chatbot_mainPnl.Location = new Point(94, 484);
+            chatbot_mainPnl.Location = new Point(95, 391);
             chatbot_mainPnl.Name = "chatbot_mainPnl";
-            chatbot_mainPnl.Size = new Size(340, 186);
-            chatbot_mainPnl.TabIndex = 39;
+            chatbot_mainPnl.Size = new Size(340, 259);
+            chatbot_mainPnl.TabIndex = 47;
             chatbot_mainPnl.Visible = false;
             // 
             // chatbot_topPnl
@@ -110,22 +112,20 @@
             // chatbot_exitLbl
             // 
             chatbot_exitLbl.AutoSize = true;
-            chatbot_exitLbl.Location = new Point(311, 2);
+            chatbot_exitLbl.Location = new Point(316, 3);
             chatbot_exitLbl.Name = "chatbot_exitLbl";
             chatbot_exitLbl.Size = new Size(18, 20);
             chatbot_exitLbl.TabIndex = 3;
             chatbot_exitLbl.Text = "X";
-            chatbot_exitLbl.Click += chatbot_exitLbl_Click;
             // 
             // chatbot_helpLbl
             // 
             chatbot_helpLbl.AutoSize = true;
-            chatbot_helpLbl.Location = new Point(10, 2);
+            chatbot_helpLbl.Location = new Point(2, 3);
             chatbot_helpLbl.Name = "chatbot_helpLbl";
             chatbot_helpLbl.Size = new Size(16, 20);
             chatbot_helpLbl.TabIndex = 2;
             chatbot_helpLbl.Text = "?";
-            chatbot_helpLbl.Click += chatbot_helpLbl_Click;
             // 
             // chatbot_replyPnl
             // 
@@ -136,7 +136,7 @@
             chatbot_replyPnl.Controls.Add(label4);
             chatbot_replyPnl.Location = new Point(12, 83);
             chatbot_replyPnl.Name = "chatbot_replyPnl";
-            chatbot_replyPnl.Size = new Size(317, 95);
+            chatbot_replyPnl.Size = new Size(317, 169);
             chatbot_replyPnl.TabIndex = 34;
             // 
             // chatbot_replyText
@@ -144,13 +144,14 @@
             chatbot_replyText.Location = new Point(36, 5);
             chatbot_replyText.Multiline = true;
             chatbot_replyText.Name = "chatbot_replyText";
-            chatbot_replyText.Size = new Size(274, 83);
+            chatbot_replyText.ScrollBars = ScrollBars.Vertical;
+            chatbot_replyText.Size = new Size(274, 155);
             chatbot_replyText.TabIndex = 31;
             // 
             // chatbot_replyPic
             // 
             chatbot_replyPic.Image = (Image)resources.GetObject("chatbot_replyPic.Image");
-            chatbot_replyPic.Location = new Point(3, 39);
+            chatbot_replyPic.Location = new Point(3, 135);
             chatbot_replyPic.Name = "chatbot_replyPic";
             chatbot_replyPic.Size = new Size(27, 25);
             chatbot_replyPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -178,7 +179,6 @@
             chatbot_askBtn.Size = new Size(37, 27);
             chatbot_askBtn.TabIndex = 33;
             chatbot_askBtn.UseVisualStyleBackColor = false;
-            chatbot_askBtn.Click += chatbot_askBtn_Click;
             // 
             // chatbot_questionTextBox
             // 
@@ -283,7 +283,6 @@
             // 
             schedule_dataGrid.AllowUserToAddRows = false;
             schedule_dataGrid.AllowUserToDeleteRows = false;
-            schedule_dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             schedule_dataGrid.BackgroundColor = Color.White;
             schedule_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             schedule_dataGrid.Columns.AddRange(new DataGridViewColumn[] { day, time, name, code });
@@ -292,7 +291,6 @@
             schedule_dataGrid.ReadOnly = true;
             schedule_dataGrid.RowHeadersVisible = false;
             schedule_dataGrid.RowHeadersWidth = 51;
-            schedule_dataGrid.ScrollBars = ScrollBars.Horizontal;
             schedule_dataGrid.Size = new Size(497, 541);
             schedule_dataGrid.TabIndex = 26;
             // 
@@ -302,6 +300,7 @@
             day.MinimumWidth = 6;
             day.Name = "day";
             day.ReadOnly = true;
+            day.Width = 124;
             // 
             // time
             // 
@@ -309,6 +308,7 @@
             time.MinimumWidth = 6;
             time.Name = "time";
             time.ReadOnly = true;
+            time.Width = 123;
             // 
             // name
             // 
@@ -316,6 +316,7 @@
             name.MinimumWidth = 6;
             name.Name = "name";
             name.ReadOnly = true;
+            name.Width = 124;
             // 
             // code
             // 
@@ -323,6 +324,16 @@
             code.MinimumWidth = 6;
             code.Name = "code";
             code.ReadOnly = true;
+            code.Width = 123;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(234, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(191, 20);
+            label1.TabIndex = 48;
+            label1.Text = "*Resize columns as needed.";
             // 
             // myScheduleForm
             // 
@@ -336,6 +347,7 @@
             Name = "myScheduleForm";
             Text = "[ mySchedule ]";
             schedule_mainPnl.ResumeLayout(false);
+            schedule_mainPnl.PerformLayout();
             chatbot_mainPnl.ResumeLayout(false);
             chatbot_mainPnl.PerformLayout();
             chatbot_topPnl.ResumeLayout(false);
@@ -362,6 +374,10 @@
         private Label schedule_titleLbl;
         private DataGridView schedule_dataGrid;
         private PictureBox chatbot_owlPic;
+        private DataGridViewTextBoxColumn day;
+        private DataGridViewTextBoxColumn time;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn code;
         private Panel chatbot_mainPnl;
         private Panel chatbot_topPnl;
         private Label chatbot_exitLbl;
@@ -373,9 +389,6 @@
         private Button chatbot_askBtn;
         private TextBox chatbot_questionTextBox;
         private Label chatbot_greetLbl;
-        private DataGridViewTextBoxColumn day;
-        private DataGridViewTextBoxColumn time;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn code;
+        private Label label1;
     }
 }

@@ -4,7 +4,7 @@
   "dob": "2005-12-25",
   "major": "Computer Science",
   "standing": "Sophomore",
-  "gpa":  "3.65",
+  "gpa": "3.65",
   "previousCourses": [
     {
       "code": "CS1010",

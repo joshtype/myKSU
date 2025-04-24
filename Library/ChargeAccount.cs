@@ -20,31 +20,43 @@ namespace myKSU_v3.Library
             this.charges = new List<Charge>();
         }
 
+
         //
-        // GET LIST OF PAID AND UNPAID CHARGES
+        // GET LIST OF UNPAID CHARGES
         //
-        public List<Charge> getUnpaidCharges()
+        public List<Charge> GetUnpaidCharges()
         {
             return this.charges.Where(c => c.isPaid == false).ToList();
         }
-        public List<Charge> getPaidCharges()
+
+
+        //
+        // GET LIST OF PAID CHARGES
+        //
+        public List<Charge> GetPaidCharges()
         {
             return this.charges.Where(c => c.isPaid == true).ToList();
         }
 
+
         //
-        // GET SUM OF PAID AND UNPAID CHARGES
+        // GET SUM OF PAID CHARGES
         //
-        public decimal sumPaidCharges()
+        public decimal SumPaidCharges()
         {
             decimal sum = 0;
-            foreach(Charge charge in this.getPaidCharges())
+            foreach(Charge charge in this.GetPaidCharges())
             {
                 sum += charge.amount;
             }
             return sum;
         }
-        public decimal sumUnpaidCharges()
+
+        
+        //
+        // GET SUM OF UNPAID CHARGES
+        //
+        public decimal SumUnpaidCharges()
         {
             decimal sum = 0;
             foreach (Charge charge in this.charges)

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(myChargesForm));
             charges_mainPnl = new Panel();
-            chatbot_owlPic = new PictureBox();
             chatbot_mainPnl = new Panel();
             chatbot_topPnl = new Panel();
             chatbot_exitLbl = new Label();
@@ -42,6 +41,7 @@
             chatbot_askBtn = new Button();
             chatbot_questionTextBox = new TextBox();
             chatbot_greetLbl = new Label();
+            chatbot_owlPic = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
             charges_paidBtn = new Button();
@@ -74,11 +74,11 @@
             charges_chargesDataGrid = new DataGridView();
             charges_totalPaid = new Label();
             charges_mainPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).BeginInit();
             chatbot_mainPnl.SuspendLayout();
             chatbot_topPnl.SuspendLayout();
             chatbot_replyPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chatbot_replyPic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).BeginInit();
             panel1.SuspendLayout();
             charges_methodPnl.SuspendLayout();
             charges_headerPnl.SuspendLayout();
@@ -92,8 +92,8 @@
             // 
             charges_mainPnl.BackColor = Color.White;
             charges_mainPnl.BackgroundImage = (Image)resources.GetObject("charges_mainPnl.BackgroundImage");
-            charges_mainPnl.Controls.Add(chatbot_owlPic);
             charges_mainPnl.Controls.Add(chatbot_mainPnl);
+            charges_mainPnl.Controls.Add(chatbot_owlPic);
             charges_mainPnl.Controls.Add(panel1);
             charges_mainPnl.Controls.Add(charges_methodPnl);
             charges_mainPnl.Controls.Add(charges_helpBtn);
@@ -107,17 +107,6 @@
             charges_mainPnl.Size = new Size(521, 699);
             charges_mainPnl.TabIndex = 28;
             // 
-            // chatbot_owlPic
-            // 
-            chatbot_owlPic.BackColor = Color.Transparent;
-            chatbot_owlPic.Image = (Image)resources.GetObject("chatbot_owlPic.Image");
-            chatbot_owlPic.Location = new Point(441, 637);
-            chatbot_owlPic.Name = "chatbot_owlPic";
-            chatbot_owlPic.Size = new Size(68, 62);
-            chatbot_owlPic.SizeMode = PictureBoxSizeMode.StretchImage;
-            chatbot_owlPic.TabIndex = 45;
-            chatbot_owlPic.TabStop = false;
-            // 
             // chatbot_mainPnl
             // 
             chatbot_mainPnl.BackColor = Color.LightYellow;
@@ -127,10 +116,10 @@
             chatbot_mainPnl.Controls.Add(chatbot_askBtn);
             chatbot_mainPnl.Controls.Add(chatbot_questionTextBox);
             chatbot_mainPnl.Controls.Add(chatbot_greetLbl);
-            chatbot_mainPnl.Location = new Point(94, 484);
+            chatbot_mainPnl.Location = new Point(105, 637);
             chatbot_mainPnl.Name = "chatbot_mainPnl";
-            chatbot_mainPnl.Size = new Size(340, 186);
-            chatbot_mainPnl.TabIndex = 44;
+            chatbot_mainPnl.Size = new Size(340, 259);
+            chatbot_mainPnl.TabIndex = 49;
             chatbot_mainPnl.Visible = false;
             // 
             // chatbot_topPnl
@@ -148,7 +137,7 @@
             // chatbot_exitLbl
             // 
             chatbot_exitLbl.AutoSize = true;
-            chatbot_exitLbl.Location = new Point(311, 2);
+            chatbot_exitLbl.Location = new Point(316, 1);
             chatbot_exitLbl.Name = "chatbot_exitLbl";
             chatbot_exitLbl.Size = new Size(18, 20);
             chatbot_exitLbl.TabIndex = 3;
@@ -158,7 +147,7 @@
             // chatbot_helpLbl
             // 
             chatbot_helpLbl.AutoSize = true;
-            chatbot_helpLbl.Location = new Point(10, 2);
+            chatbot_helpLbl.Location = new Point(2, 1);
             chatbot_helpLbl.Name = "chatbot_helpLbl";
             chatbot_helpLbl.Size = new Size(16, 20);
             chatbot_helpLbl.TabIndex = 2;
@@ -174,7 +163,7 @@
             chatbot_replyPnl.Controls.Add(label4);
             chatbot_replyPnl.Location = new Point(12, 83);
             chatbot_replyPnl.Name = "chatbot_replyPnl";
-            chatbot_replyPnl.Size = new Size(317, 95);
+            chatbot_replyPnl.Size = new Size(317, 169);
             chatbot_replyPnl.TabIndex = 34;
             // 
             // chatbot_replyText
@@ -182,13 +171,14 @@
             chatbot_replyText.Location = new Point(36, 5);
             chatbot_replyText.Multiline = true;
             chatbot_replyText.Name = "chatbot_replyText";
-            chatbot_replyText.Size = new Size(274, 83);
+            chatbot_replyText.ScrollBars = ScrollBars.Vertical;
+            chatbot_replyText.Size = new Size(274, 155);
             chatbot_replyText.TabIndex = 31;
             // 
             // chatbot_replyPic
             // 
             chatbot_replyPic.Image = (Image)resources.GetObject("chatbot_replyPic.Image");
-            chatbot_replyPic.Location = new Point(3, 39);
+            chatbot_replyPic.Location = new Point(3, 135);
             chatbot_replyPic.Name = "chatbot_replyPic";
             chatbot_replyPic.Size = new Size(27, 25);
             chatbot_replyPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -233,6 +223,18 @@
             chatbot_greetLbl.Size = new Size(323, 20);
             chatbot_greetLbl.TabIndex = 2;
             chatbot_greetLbl.Text = "I'm Hooty, your digital advisor! How can I help?";
+            // 
+            // chatbot_owlPic
+            // 
+            chatbot_owlPic.BackColor = Color.Transparent;
+            chatbot_owlPic.Image = (Image)resources.GetObject("chatbot_owlPic.Image");
+            chatbot_owlPic.Location = new Point(441, 637);
+            chatbot_owlPic.Name = "chatbot_owlPic";
+            chatbot_owlPic.Size = new Size(68, 62);
+            chatbot_owlPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            chatbot_owlPic.TabIndex = 45;
+            chatbot_owlPic.TabStop = false;
+            chatbot_owlPic.Click += chatbot_owlPic_Click;
             // 
             // panel1
             // 
@@ -301,6 +303,7 @@
             charges_methodPnl.Name = "charges_methodPnl";
             charges_methodPnl.Size = new Size(486, 231);
             charges_methodPnl.TabIndex = 42;
+            charges_methodPnl.Visible = false;
             // 
             // bank_routingLbl
             // 
@@ -317,7 +320,6 @@
             bank_routingText.Location = new Point(271, 147);
             bank_routingText.Name = "bank_routingText";
             bank_routingText.PlaceholderText = "1234-1234-1234-1234";
-            bank_routingText.ReadOnly = true;
             bank_routingText.Size = new Size(186, 27);
             bank_routingText.TabIndex = 51;
             // 
@@ -349,7 +351,6 @@
             bank_acctText.Location = new Point(271, 87);
             bank_acctText.Name = "bank_acctText";
             bank_acctText.PlaceholderText = "1234-1234-1234-1234";
-            bank_acctText.ReadOnly = true;
             bank_acctText.Size = new Size(186, 27);
             bank_acctText.TabIndex = 49;
             // 
@@ -359,7 +360,6 @@
             cc_yyyyText.Location = new Point(90, 194);
             cc_yyyyText.Name = "cc_yyyyText";
             cc_yyyyText.PlaceholderText = "yyyy";
-            cc_yyyyText.ReadOnly = true;
             cc_yyyyText.Size = new Size(127, 27);
             cc_yyyyText.TabIndex = 48;
             // 
@@ -396,7 +396,6 @@
             cc_mmText.Location = new Point(31, 194);
             cc_mmText.Name = "cc_mmText";
             cc_mmText.PlaceholderText = "mm";
-            cc_mmText.ReadOnly = true;
             cc_mmText.Size = new Size(53, 27);
             cc_mmText.TabIndex = 44;
             // 
@@ -406,7 +405,6 @@
             cc_numText.Location = new Point(31, 87);
             cc_numText.Name = "cc_numText";
             cc_numText.PlaceholderText = "1234-1234-1234-1234";
-            cc_numText.ReadOnly = true;
             cc_numText.Size = new Size(186, 27);
             cc_numText.TabIndex = 43;
             // 
@@ -416,18 +414,18 @@
             cc_nameText.Location = new Point(31, 140);
             cc_nameText.Name = "cc_nameText";
             cc_nameText.PlaceholderText = "Sama S. Tudent";
-            cc_nameText.ReadOnly = true;
             cc_nameText.Size = new Size(186, 27);
             cc_nameText.TabIndex = 42;
             // 
             // details_payMethodMenu
             // 
             details_payMethodMenu.FormattingEnabled = true;
-            details_payMethodMenu.Items.AddRange(new object[] { "Credit Card", "Bank Transfer" });
+            details_payMethodMenu.Items.AddRange(new object[] { "None", "Credit Card", "Bank Transfer" });
             details_payMethodMenu.Location = new Point(148, 12);
             details_payMethodMenu.Name = "details_payMethodMenu";
             details_payMethodMenu.Size = new Size(186, 28);
             details_payMethodMenu.TabIndex = 40;
+            details_payMethodMenu.Text = "Select...";
             // 
             // details_payMethodLbl
             // 
@@ -578,7 +576,6 @@
             Name = "myChargesForm";
             Text = "[ myCharges ]";
             charges_mainPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).EndInit();
             chatbot_mainPnl.ResumeLayout(false);
             chatbot_mainPnl.PerformLayout();
             chatbot_topPnl.ResumeLayout(false);
@@ -586,6 +583,7 @@
             chatbot_replyPnl.ResumeLayout(false);
             chatbot_replyPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chatbot_replyPic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chatbot_owlPic).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             charges_methodPnl.ResumeLayout(false);

@@ -10,6 +10,9 @@ namespace myKSU_v3.Library
         public string hours { get; set; }
         public string location { get; set; }
 
-        public override string ToString() { return $"{this.name}: {this.phone} / {this.hours} / {this.location}."; }
+        public override string ToString() 
+        { 
+            return $"{this.name}: {this.phone} / {this.hours} / {this.location}."; 
+        }
     }
 }

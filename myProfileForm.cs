@@ -19,6 +19,8 @@ namespace myKSU_v3
         private Profile profile { get; set; }
         private AdvisorBot bot { get; set; }
 
+
+        // INITIALIZE FORM WITH NEEDED OBJECTS PASSED FROM HOME
         public myProfileForm(myHomeForm home, Student s, Profile p, AdvisorBot ab)
         {
             InitializeComponent();
@@ -29,11 +31,13 @@ namespace myKSU_v3
             this.bot = ab;
 
             loadProfileFields();   // get & display profile fields from profile.json
-
             chatbot_mainPnl.Visible = false;  // set chatbot panel to hidden on load
         }
 
+
+        //
         // BACK TO HOME NAV & HELP BUTTONS
+        //
         private void charges_helpBtn_Click(object sender, EventArgs e) => MessageBox.Show("Placeholder text");
         private void charges_backBtn_Click(object sender, EventArgs e)
         {
@@ -41,7 +45,10 @@ namespace myKSU_v3
             this.Hide();
         }
 
+
+        //
         // GET PROFILE FIELDS VIA DATALOADER & DISPLAY IN FORM 
+        //
         public void loadProfileFields()
         {
             // Profile obj created at login, passed to home, passed to profile, updated and saved by DataLoader
@@ -51,7 +58,10 @@ namespace myKSU_v3
             profile_bioText.Text = profile.bio;
         }
 
+
+        //
         // ENABLE EDITING PROFILE FIELDS
+        //
         private void profile_editProfileBtn_Click(object sender, EventArgs e)
         {
             profile_editModeLbl.Visible = true;             // show "EDIT MODE ON" label
@@ -67,8 +77,11 @@ namespace myKSU_v3
             profile_bioText.BackColor = Color.White;
         }
 
+
+        //
         // EDIT PROFILE AVATAR
-        private void profile_editPicLink_Click(object sender, EventArgs e) => 
+        //
+        private void profile_editPicLink_Click(object sender, EventArgs e) =>
             MessageBox.Show("Local storage access diabled for prototype.");
 
         // SAVE EDITS TO PROFILE.JSON
@@ -91,13 +104,16 @@ namespace myKSU_v3
             profile.favQuote = profile_quoteText.Text;
             profile.bio = profile_bioText.Text;
 
-            DataLoader.saveProfileData(profile);            // update profile.json
+            DataLoader.SaveProfileData(profile);            // update profile.json
         }
 
+
+        //
         // CHATBOT LOGIC
+        //
         private void chatbot_owlPic_Click(object sender, EventArgs e) =>
             chatbot_mainPnl.Visible = !chatbot_mainPnl.Visible;                    // visibility set to opposite of current state
-
+        
         private void chatbot_askBtn_Click(object sender, EventArgs e)
         {
             string userInput = chatbot_questionTextBox.Text.Trim();                // get input from textbox
@@ -105,14 +121,16 @@ namespace myKSU_v3
             if (string.IsNullOrEmpty(userInput))
                 chatbot_replyText.Text = "Hoot! You forgot to ask me a question!";  // confirm input len > 0
 
-            string reply = bot.parseChatbotReply(userInput);                    // pass input to be parsed & keyword/regex matched
+            string reply = bot.Respond(userInput);                                  // pass input to be parsed & keyword matched
             chatbot_replyText.Text = reply;                                         // show reponse in output region
         }
-
+        
         private void chatbot_helpLbl_Click(object sender, EventArgs e) =>
-            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, and enrolled courses. I can also give other answers like the next registration add/drop deadline and info on offices like the Registrar's Office or Campus Police.";
-
+            chatbot_replyText.Text = "Hoot! I can answer questions about your GPA, major, class standing, and enrolled courses. " +
+            "I can also give other answers like the upcoming and info on offices like the Registrar's Office or Tech Support." +
+            "I can also provide info about KSU like address, current semester, and upcoming add/drop deadline.";
+        
         private void chatbot_exitLbl_Click(object sender, EventArgs e) =>
-            chatbot_mainPnl.Visible = false;                                        // hide panel        
+            chatbot_mainPnl.Visible = false;                                        // hide panel   
     }
 }

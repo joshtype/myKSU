@@ -13,13 +13,18 @@ namespace myKSU_v3.Library
         // !!! DO NOT EDIT !!!
         private static readonly string basepath = Path.Combine(AppContext.BaseDirectory, "data");
 
-        //private static readonly string basepath = Path.Combine(Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName, "data");
+        // !!! JSON SERIALIZER OPTIONS - DO NOT EDIT !!!
+        private static JsonSerializerOptions JsonOptions => new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true
+        };
 
 
         //
         // Read json data for any object type, json key names must match class fields EXACTLY, filepathing is dynamic
         //
-        private static T loadFromJson<T>(string filename)
+        private static T LoadFromJson<T>(string filename)
         {
             try
             {
@@ -46,49 +51,43 @@ namespace myKSU_v3.Library
                 throw; // Rethrow exception for further handling
             }
         }
-
-        // JSON Serializer Options
-        private static JsonSerializerOptions JsonOptions => new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true,
-            WriteIndented = true
-        };
-
+        
 
         //
         // CREATE OBJECTS VIA READING JSON FILES
         //
-        public static Student loadStudent() 
+        public static Student LoadStudent() 
         { 
             var student = new Student();  // create reference to object to pass to other forms
-            return loadFromJson<Student>("student.json"); 
+            return LoadFromJson<Student>("student.json"); 
         }
-        public static CourseManager loadCourseManager()
+        public static CourseManager LoadCourseManager()
         {
             var courseManager = new CourseManager();
-            courseManager.catalogFall2026 = loadFromJson<List<Course>>("catalog.json"); // catalogFall2026 = list of Course objs
+            courseManager.catalogFall2026 = LoadFromJson<List<Course>>("catalog.json"); // catalogFall2026 = list of Course objs
             return courseManager;
         }
-        public static University loadUniversity()
+        public static University LoadUniversity()
         {
-            var university = loadFromJson<University>("university.json");
+            var university = LoadFromJson<University>("university.json");
             return university;
         }
-        public static ChargeAccount loadChargeAccount()
+        public static ChargeAccount LoadChargeAccount()
         {
             var chargeAccount = new ChargeAccount();
-            return loadFromJson<ChargeAccount>("chargeAccount.json");
+            return LoadFromJson<ChargeAccount>("chargeAccount.json");
         }
-        public static Profile loadProfile()
+        public static Profile LoadProfile()
         {
             var profile = new Profile();
-            return loadFromJson<Profile>("profile.json");
+            return LoadFromJson<Profile>("profile.json");
         }
 
+
         //
-        // UPDATE STUDENT.JSON
+        // UPDATE STUDENT JSON FILE
         //
-        public static void saveStudentData(Student student)
+        public static void SaveStudentData(Student student)
         {
             string filepath = Path.Combine(basepath, "student.json");  // use basepath field to get file
 
@@ -109,10 +108,11 @@ namespace myKSU_v3.Library
             }
         }
 
+
         // 
-        // UPDATE CHARGEACCOUNT.JSON
+        // UPDATE CHARGEACCOUNT JSON FILE
         //
-        public static void saveChargeAccountData(ChargeAccount chargeAccount)
+        public static void SaveChargeAccountData(ChargeAccount chargeAccount)
         {
             string filepath = Path.Combine(basepath, "chargeAccount.json");
 
@@ -129,14 +129,15 @@ namespace myKSU_v3.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to update student data.\nERROR: {ex.Message}");
+                MessageBox.Show($"Failed to update charges data.\nERROR: {ex.Message}");
             }
         }
 
+
         //
-        // UPDATE PROFILE.JSON
+        // UPDATE PROFILE JSON FILE
         //
-        public static void saveProfileData(Profile profile)
+        public static void SaveProfileData(Profile profile)
         {
             string filepath = Path.Combine(basepath, "profile.json");
 
@@ -153,7 +154,7 @@ namespace myKSU_v3.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to update student data.\nERROR: {ex.Message}");
+                MessageBox.Show($"Failed to update profile data.\nERROR: {ex.Message}");
             }
         }
     }

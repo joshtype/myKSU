@@ -124,9 +124,9 @@
             chatbot_mainPnl.Controls.Add(chatbot_askBtn);
             chatbot_mainPnl.Controls.Add(chatbot_questionTextBox);
             chatbot_mainPnl.Controls.Add(chatbot_greetLbl);
-            chatbot_mainPnl.Location = new Point(94, 484);
+            chatbot_mainPnl.Location = new Point(95, 391);
             chatbot_mainPnl.Name = "chatbot_mainPnl";
-            chatbot_mainPnl.Size = new Size(340, 186);
+            chatbot_mainPnl.Size = new Size(340, 259);
             chatbot_mainPnl.TabIndex = 46;
             chatbot_mainPnl.Visible = false;
             // 
@@ -145,17 +145,16 @@
             // chatbot_exitLbl
             // 
             chatbot_exitLbl.AutoSize = true;
-            chatbot_exitLbl.Location = new Point(311, 2);
+            chatbot_exitLbl.Location = new Point(316, 3);
             chatbot_exitLbl.Name = "chatbot_exitLbl";
             chatbot_exitLbl.Size = new Size(18, 20);
             chatbot_exitLbl.TabIndex = 3;
             chatbot_exitLbl.Text = "X";
-            chatbot_exitLbl.Click += chatbot_exitLbl_Click;
             // 
             // chatbot_helpLbl
             // 
             chatbot_helpLbl.AutoSize = true;
-            chatbot_helpLbl.Location = new Point(10, 2);
+            chatbot_helpLbl.Location = new Point(2, 3);
             chatbot_helpLbl.Name = "chatbot_helpLbl";
             chatbot_helpLbl.Size = new Size(16, 20);
             chatbot_helpLbl.TabIndex = 2;
@@ -171,7 +170,7 @@
             chatbot_replyPnl.Controls.Add(label4);
             chatbot_replyPnl.Location = new Point(12, 83);
             chatbot_replyPnl.Name = "chatbot_replyPnl";
-            chatbot_replyPnl.Size = new Size(317, 95);
+            chatbot_replyPnl.Size = new Size(317, 169);
             chatbot_replyPnl.TabIndex = 34;
             // 
             // chatbot_replyText
@@ -179,13 +178,14 @@
             chatbot_replyText.Location = new Point(36, 5);
             chatbot_replyText.Multiline = true;
             chatbot_replyText.Name = "chatbot_replyText";
-            chatbot_replyText.Size = new Size(274, 83);
+            chatbot_replyText.ScrollBars = ScrollBars.Vertical;
+            chatbot_replyText.Size = new Size(274, 155);
             chatbot_replyText.TabIndex = 31;
             // 
             // chatbot_replyPic
             // 
             chatbot_replyPic.Image = (Image)resources.GetObject("chatbot_replyPic.Image");
-            chatbot_replyPic.Location = new Point(3, 39);
+            chatbot_replyPic.Location = new Point(3, 135);
             chatbot_replyPic.Name = "chatbot_replyPic";
             chatbot_replyPic.Size = new Size(27, 25);
             chatbot_replyPic.SizeMode = PictureBoxSizeMode.StretchImage;

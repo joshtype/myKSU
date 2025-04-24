@@ -12,12 +12,18 @@ namespace myKSU_v3.Library
         public string standing { get; set; }
         public string gpa { get; set; }
 
-        // CURRENT AND PREVIOUS COURSES
         public List<Course> previousCourses { get; set; }
         public List<Course> enrolledCourses { get; set; }
 
-        // METHODS
-        public Student() => enrolledCourses = new List<Course>();
-        public override string ToString() => $"{name} [KSUID: {ksuId}]";
+        public Student()
+        {
+            enrolledCourses = new List<Course>();
+            previousCourses = new List<Course>();
+        }
+            
+        public override string ToString()
+        {
+            return $"{name} (KSUID: {ksuId}) / DOB: {dob} / Major: {major} / Class Standing: {standing} / GPA: {gpa}.";
+        }
     }
 }

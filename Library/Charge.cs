@@ -10,12 +10,10 @@ namespace myKSU_v3.Library
         public DateOnly dueDate       { get; set; }
         public string description     { get; set; }
         public bool isPaid            { get; set; } = false;  // default = false
-
         public string? paymentMethod  { get; set; }
-        public DateOnly? paidDate     { get; set; }  
         public string? paymentId      { get; set; }
 
-        public string paidDateFormatted => paidDate?.ToString("yyyy-MM-dd") ?? " ";
+        public string paidDate { get; set; } = "N/A"; // should be nullable DateOnly, display issues force non-nullable string set to default
     }
 }
 
