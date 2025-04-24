@@ -1,0 +1,117 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="data\catalog.json" />
+    <None Remove="data\chargeAccount.json" />
+    <None Remove="data\profile.json" />
+    <None Remove="data\student.json" />
+    <None Remove="data\university.json" />
+    <None Remove="img\advisorBtn.png" />
+    <None Remove="img\bg_myKSU.png" />
+    <None Remove="img\calendarTransparent_myKSU.png" />
+    <None Remove="img\coursesBtn.png" />
+    <None Remove="img\featherIcon.ico" />
+    <None Remove="img\featherTransparent_myKSU.png" />
+    <None Remove="img\homeBtn.png" />
+    <None Remove="img\hootyTop.png" />
+    <None Remove="img\hootyWaving.png" />
+    <None Remove="img\logo_myKSU.png" />
+    <None Remove="img\magTransparent_myKSU.png" />
+    <None Remove="img\owlfaceIcon.ico" />
+    <None Remove="img\owlfaceTransparent_myKSU.png" />
+    <None Remove="img\paymentsBtn.png" />
+    <None Remove="img\profileBtn.png" />
+    <None Remove="img\registrationBtn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\catalog.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\chargeAccount.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\profile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\student.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\university.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\advisorBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\bg_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\calendarTransparent_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\coursesBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\featherIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\featherTransparent_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\homeBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\hootyWaving.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\logo_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\magTransparent_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\owlfaceIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\owlfaceTransparent_myKSU.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\paymentsBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\profileBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\registrationBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" Version="16.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

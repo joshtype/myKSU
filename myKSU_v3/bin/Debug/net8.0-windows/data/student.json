@@ -1,0 +1,57 @@
+{
+  "ksuId": "123456789",
+  "name": "Sama S. Tudent",
+  "dob": "2005-12-25",
+  "major": "Computer Science",
+  "standing": "Sophomore",
+  "gpa": "3.65",
+  "previousCourses": [
+    {
+      "code": "CS1010",
+      "name": "Introduction to Programming",
+      "description": "Fundamentals of programming using Python. Covers logic and algorithms.",
+      "department": "Computer Science",
+      "type": "online",
+      "credits": 3,
+      "seatCap": 40,
+      "prerequisites": [
+        "None"
+      ],
+      "meetingTimes": null
+    }
+  ],
+  "enrolledCourses": [
+    {
+      "code": "CS2010",
+      "name": "Computer Architecture",
+      "description": "Examines internal structure of modern processors, memory hierarchies, and instruction execution.",
+      "department": "Computer Science",
+      "type": "in-person",
+      "credits": 3,
+      "seatCap": 30,
+      "prerequisites": [
+        "CS1010"
+      ],
+      "meetingTimes": {
+        "Monday": "11:00 AM - 12:30 PM",
+        "Wednesday": "11:00 AM - 12:30 PM"
+      }
+    },
+    {
+      "code": "ENG1050",
+      "name": "English Composition",
+      "description": "Study and practice of written communication and essay development.",
+      "department": "English",
+      "type": "in-person",
+      "credits": 3,
+      "seatCap": 45,
+      "prerequisites": [
+        "None"
+      ],
+      "meetingTimes": {
+        "Monday": "11:00 AM - 12:30 PM",
+        "Wednesday": "11:00 AM - 12:30 PM"
+      }
+    }
+  ]
+}
