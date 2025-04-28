@@ -11,7 +11,6 @@ namespace myKSU_v3.Library
         public string major { get; set; }
         public string standing { get; set; }
         public string gpa { get; set; }
-
         public List<Course> previousCourses { get; set; }
         public List<Course> enrolledCourses { get; set; }
 
